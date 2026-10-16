@@ -8,7 +8,7 @@ Kumpulan tools hitung HR gratis untuk HR, admin, payroll, dan karyawan Indonesia
 |---|---|---|
 | Kalkulator Lembur (PP 35/2021) | [`kalkulator-lembur/`](kalkulator-lembur/) | ✅ Live |
 | Kalkulator BPJS (tarif & batas upah 2026) | [`kalkulator-bpjs/`](kalkulator-bpjs/) | ✅ Live |
-| Kalkulator PPh 21 | – | Segera |
+| Kalkulator PPh 21 (TER PP 58/2023) | [`kalkulator-pph21/`](kalkulator-pph21/) | ✅ Live |
 | Masa Kerja & Pesangon | – | Segera |
 | Penggabung File Excel | – | Segera |
 | Penghapus Data Duplikat | – | Segera |
@@ -21,8 +21,10 @@ Kumpulan tools hitung HR gratis untuk HR, admin, payroll, dan karyawan Indonesia
 ├── sitemap.xml                 # Daftar halaman untuk Google
 ├── kalkulator-lembur/
 │   └── index.html              # Kalkulator lembur
-└── kalkulator-bpjs/
-    └── index.html              # Kalkulator BPJS
+├── kalkulator-bpjs/
+│   └── index.html              # Kalkulator BPJS
+└── kalkulator-pph21/
+    └── index.html              # Kalkulator PPh 21
 ```
 
 Setiap tool berada di foldernya sendiri dengan file `index.html`, sehingga URL-nya rapi (misalnya `/kalkulator-lembur/`).
