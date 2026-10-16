@@ -3,64 +3,130 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kalkulator HR – Tools Gratis untuk HR, Admin & Karyawan Indonesia</title>
-<meta name="description" content="Kumpulan kalkulator dan tools HR gratis: hitung lembur sesuai PP 35/2021, BPJS, PPh 21, pesangon, dan pengolah file Excel. Tanpa daftar, langsung pakai.">
+<title>Kalkulator HR – Hitung Gaji Bersih, Lembur, BPJS, PPh 21 & Pesangon Gratis</title>
+<meta name="description" content="Kumpulan kalkulator dan tools HR gratis: hitung gaji bersih, lembur sesuai PP 35/2021, iuran BPJS 2026, PPh 21 tarif TER, pesangon, serta gabung dan bersihkan file Excel. Tanpa daftar, langsung pakai.">
 <!-- Ganti alamat ini jika nanti pakai domain sendiri -->
 <link rel="canonical" href="https://fahrurrozim67-beep.github.io/kalkulator-hr/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fahrurrozim67-beep.github.io/kalkulator-hr/">
 <meta property="og:title" content="Kalkulator HR – Tools Gratis untuk HR Indonesia">
-<meta property="og:description" content="Hitung lembur, BPJS, PPh 21, dan pesangon dengan cepat. Gratis, tanpa daftar.">
-<meta name="theme-color" content="#0f6e56">
+<meta property="og:description" content="Hitung gaji bersih, lembur, BPJS, PPh 21, dan pesangon dengan cepat. Gratis, tanpa daftar.">
+<meta name="theme-color" content="#24408E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 
 <!-- ===== TEMPAT KODE GOOGLE ADSENSE (tempel di sini setelah disetujui) ===== -->
 
 <style>
 :root{
-  --bg:#f5f4ee; --surface:#ffffff; --ink:#15211d; --muted:#5d6a65; --line:#e3e1d7;
-  --brand:#0f6e56; --brand-ink:#ffffff; --brand-soft:#e6f2ec; --accent:#e8932c; --accent-soft:#fdf1e2;
-  --radius:16px; --shadow:0 1px 2px rgba(20,33,29,.05),0 8px 24px rgba(20,33,29,.06);
+  --bg:#EEF1F6; --surface:#FFFFFF; --ink:#1A2233; --muted:#5B6578; --line:#D9DEE8;
+  --brand:#24408E; --brand-ink:#FFFFFF; --brand-soft:#E4E9F6;
+  --paper:#FFFFFF; --paper-ink:#1A2233; --paper-line:#D3D9E4; --greenbar:#EEF6F0;
+  --marker:#FFE15A; --stamp:#C0392B; --slot:#232B3D;
+  --mono:"Courier Prime",ui-monospace,"Courier New",monospace;
 }
 @media (prefers-color-scheme:dark){
   :root{
-    --bg:#0f1513; --surface:#17201d; --ink:#e8efec; --muted:#9aa8a2; --line:#27332f;
-    --brand:#3fb68f; --brand-ink:#08130f; --brand-soft:#16302a; --accent:#f0a64a; --accent-soft:#33261a; --shadow:none;
+    --bg:#0F1422; --surface:#171E30; --ink:#E6EAF3; --muted:#9AA4B8; --line:#283149;
+    --brand:#8EA6FF; --brand-ink:#0F1422; --brand-soft:#1D2747;
+    --paper:#F6F7FA; --slot:#05080F;
   }
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;font-size:16px}
 a{color:var(--brand)}
-.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
-header.top{border-bottom:1px solid var(--line);background:var(--surface)}
-header.top .wrap{display:flex;align-items:center;height:60px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;color:var(--ink);letter-spacing:-.02em}
-.logo-mark{width:30px;height:30px;border-radius:9px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:15px}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
 
-.hero{padding:56px 0 36px}
-.badge{display:inline-flex;background:var(--brand-soft);color:var(--brand);font-weight:700;font-size:12.5px;padding:5px 11px;border-radius:999px}
-h1{font-size:clamp(30px,6vw,50px);line-height:1.1;letter-spacing:-.035em;margin:16px 0 14px;font-weight:800;max-width:720px}
-h1 em{font-style:normal;color:var(--brand)}
-.lead{color:var(--muted);font-size:18px;max-width:600px;margin:0}
+/* Header */
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;color:var(--ink);letter-spacing:-.02em;font-size:17px}
+.logo-mark{width:32px;height:32px;border-radius:8px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:12.5px;font-weight:800;letter-spacing:-.02em}
+nav.top a{font-size:14.5px;font-weight:600;color:var(--muted);text-decoration:none;margin-left:22px}
+nav.top a:hover{color:var(--ink)}
 
-.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;padding-bottom:48px}
-.tool{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);text-decoration:none;color:var(--ink);transition:transform .15s,border-color .15s;min-height:190px}
-a.tool:hover{transform:translateY(-3px);border-color:var(--brand)}
-.ico{width:44px;height:44px;border-radius:12px;background:var(--brand-soft);display:grid;place-items:center;font-size:21px;margin-bottom:14px}
-.tool h2{font-size:18px;margin:0 0 6px;letter-spacing:-.01em}
-.tool p{margin:0;color:var(--muted);font-size:14.5px;flex:1}
-.tag{margin-top:14px;font-size:12.5px;font-weight:700}
-.tag.live{color:var(--brand)}
-.tag.soon{color:var(--muted)}
-.tool.soon{opacity:.62;box-shadow:none;background:transparent;border-style:dashed}
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr;gap:36px;padding:28px 0 56px;align-items:center}
+@media(min-width:920px){.hero{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;padding:48px 0 80px}}
+h1{font-size:clamp(34px,5.6vw,58px);line-height:1.04;letter-spacing:-.045em;margin:0 0 20px;font-weight:800;max-width:13ch}
+.lead{color:var(--muted);font-size:18px;line-height:1.6;max-width:46ch;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{font:inherit;font-weight:700;font-size:15px;border-radius:10px;padding:13px 20px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1.5px solid transparent}
+.btn-primary{background:var(--brand);color:var(--brand-ink)}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-line{border-color:var(--line);color:var(--ink);background:var(--surface)}
+.btn-line:hover{border-color:var(--brand)}
+.facts{display:flex;flex-wrap:wrap;gap:6px 22px;margin:28px 0 0;padding:0;list-style:none;font-size:14px;color:var(--muted)}
+.facts li{display:flex;align-items:center;gap:7px}
+.facts svg{color:var(--brand);flex:none}
 
-.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:8px 0 48px}
-.why h3{font-size:16px;margin:0 0 4px}
-.why p{margin:0;color:var(--muted);font-size:14.5px}
-.donate{background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;font-size:15px;margin-bottom:48px}
+/* Slip gaji (continuous form) */
+.printer{position:relative;max-width:460px;width:100%;justify-self:center}
+.slot{height:14px;border-radius:8px;background:var(--slot);margin:0 -10px;position:relative;z-index:2;box-shadow:0 2px 0 rgba(255,255,255,.06) inset}
+.slip{position:relative;margin-top:-6px;background:var(--paper);color:var(--paper-ink);padding:22px 40px 26px;
+  box-shadow:0 26px 48px -26px rgba(20,30,60,.5),0 2px 6px rgba(20,30,60,.08);
+  background-image:repeating-linear-gradient(to bottom,transparent 0 44px,var(--greenbar) 44px 88px);
+  transform-origin:top center;animation:feed 1.1s cubic-bezier(.2,.7,.2,1) .15s both}
+.slip::before,.slip::after{content:"";position:absolute;top:0;bottom:0;width:22px;
+  background:radial-gradient(circle,var(--bg) 4px,transparent 4.6px) 50% 10px/22px 22px repeat-y}
+.slip::before{left:0;border-right:1px dashed #C7CEDB}
+.slip::after{right:0;border-left:1px dashed #C7CEDB}
+@keyframes feed{from{clip-path:inset(0 0 100% 0);transform:translateY(-10px)}to{clip-path:inset(0 0 0 0);transform:none}}
+@media (prefers-reduced-motion:reduce){.slip{animation:none}}
+.slip-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:2px solid var(--paper-ink);padding-bottom:8px;margin-bottom:14px;font-family:var(--mono)}
+.slip-head b{font-size:19px;letter-spacing:.02em}
+.slip-head span{font-size:13px;color:#5B6578}
+.slip label{display:block;font-size:12.5px;font-weight:700;color:#5B6578;margin-bottom:4px}
+.slip-inputs{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;margin-bottom:14px}
+.slip input,.slip select{width:100%;font-family:var(--mono);font-size:17px;font-weight:700;color:var(--paper-ink);background:#fff;border:1.5px solid #C7CEDB;border-radius:6px;padding:8px 10px;outline:none;min-height:44px}
+.slip input:focus,.slip select:focus{border-color:#24408E;box-shadow:0 0 0 3px rgba(36,64,142,.15)}
+.money{position:relative}
+.money::before{content:"Rp";position:absolute;left:10px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-weight:700;color:#5B6578;font-size:15px}
+.money input{padding-left:36px}
+.lines{font-family:var(--mono);font-size:15px}
+.line{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px dotted #C7CEDB}
+.line a{color:inherit;text-decoration:underline;text-decoration-color:#9AA6C4;text-underline-offset:3px}
+.line a:hover{color:#24408E;text-decoration-color:#24408E}
+.line small{color:#6B7488;font-size:12.5px}
+.line .v{white-space:nowrap;font-variant-numeric:tabular-nums}
+.line.minus .v{color:var(--stamp)}
+.line.sub{border-bottom:0;padding-top:12px;font-weight:700}
+.line.extra{color:#6B7488;border-bottom:0;font-size:13.5px}
+.total{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:6px;padding-top:12px;border-top:3px double var(--paper-ink);font-family:var(--mono)}
+.total span{font-weight:700;font-size:15px}
+.total b{font-size:clamp(24px,4.6vw,30px);letter-spacing:-.01em;padding:0 4px;background:linear-gradient(transparent 52%,var(--marker) 52%,var(--marker) 90%,transparent 90%);font-variant-numeric:tabular-nums}
+.slip-note{font-size:12.5px;color:#6B7488;margin:14px 0 0;line-height:1.5}
+@media(max-width:420px){.slip{padding:18px 32px 22px}.slip-inputs{grid-template-columns:1fr}.lines{font-size:14px}}
+
+/* Daftar alat */
+.section-h{font-size:clamp(24px,3.4vw,32px);letter-spacing:-.03em;line-height:1.15;margin:0 0 8px;font-weight:800}
+.section-p{color:var(--muted);margin:0 0 28px;max-width:60ch}
+.index{padding:8px 0 64px}
+.group{display:grid;grid-template-columns:1fr;gap:6px 40px;padding:22px 0;border-top:1.5px solid var(--ink)}
+.group:last-of-type{border-bottom:1.5px solid var(--ink)}
+@media(min-width:820px){.group{grid-template-columns:220px minmax(0,1fr)}}
+.group h3{margin:6px 0 10px;font-size:15px;font-weight:700}
+.group h3 small{display:block;color:var(--muted);font-weight:500;font-size:13.5px;margin-top:2px}
+.tools{list-style:none;margin:0;padding:0}
+.tools li + li{border-top:1px solid var(--line)}
+.tool{display:grid;grid-template-columns:minmax(0,1fr) auto 20px;gap:6px 18px;align-items:center;padding:16px 10px;margin:0 -10px;border-radius:10px;text-decoration:none;color:var(--ink)}
+.tool:hover{background:var(--surface)}
+.tool:hover .chev{transform:translateX(3px);color:var(--brand)}
+.tool b{display:block;font-size:18px;letter-spacing:-.015em}
+.tool span.d{display:block;color:var(--muted);font-size:14.5px;margin-top:2px}
+.tool .tag{font-size:12.5px;font-weight:700;color:var(--brand);background:var(--brand-soft);padding:4px 10px;border-radius:999px;white-space:nowrap}
+.chev{color:var(--muted);transition:transform .15s,color .15s}
+@media(max-width:560px){.tool{grid-template-columns:minmax(0,1fr) 20px}.tool .tag{grid-row:2;justify-self:start}.chev{grid-row:1/3;grid-column:2}}
+
+/* Jaminan */
+.assure{display:grid;grid-template-columns:1fr;gap:22px;padding:0 0 64px}
+@media(min-width:760px){.assure{grid-template-columns:repeat(3,1fr);gap:0}.assure div{padding:0 26px}.assure div:first-child{padding-left:0}.assure div + div{border-left:1px solid var(--line)}}
+.assure h3{font-size:16px;margin:0 0 4px}
+.assure p{margin:0;color:var(--muted);font-size:14.5px}
+
+.donate{background:#FFF5D1;color:#1A2233;border-radius:12px;padding:16px 18px;font-size:15px;margin-bottom:48px}
 .donate a{font-weight:700}
 footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:13.5px}
 </style>
@@ -68,59 +134,86 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
 <body>
 
 <header class="top">
-  <div class="wrap"><a class="logo" href="./"><span class="logo-mark">⏱</span>Kalkulator HR</a></div>
+  <div class="wrap">
+    <a class="logo" href="./" aria-label="Kalkulator HR, beranda"><span class="logo-mark">Rp</span>Kalkulator HR</a>
+    <nav class="top"><a href="#alat">Semua alat</a></nav>
+  </div>
 </header>
 
 <main class="wrap">
   <section class="hero">
-    <span class="badge">Gratis · Tanpa daftar · Sesuai regulasi Indonesia</span>
-    <h1>Tools hitung HR yang <em>cepat dan akurat</em>.</h1>
-    <p class="lead">Kalkulator lembur, BPJS, pajak, dan pengolah data Excel untuk HR, admin, payroll, dan karyawan. Semua perhitungan berjalan di browser, jadi data tidak dikirim ke mana pun.</p>
+    <div>
+      <h1>Hitung hak karyawan tanpa buka rumus Excel.</h1>
+      <p class="lead">Gaji bersih, lembur, BPJS, PPh 21, sampai pesangon. Semua mengikuti aturan terbaru dan langsung dihitung di browser, jadi data gaji tidak dikirim ke mana pun.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#alat">Lihat semua alat</a>
+        <a class="btn btn-line" href="kalkulator-lembur/">Hitung lembur</a>
+      </div>
+      <ul class="facts">
+        <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Gratis, tanpa daftar</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tarif & batas upah 2026</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Nyaman dipakai di HP</li>
+      </ul>
+    </div>
+
+    <div class="printer">
+      <div class="slot" aria-hidden="true"></div>
+      <section class="slip" aria-label="Simulasi slip gaji">
+        <div class="slip-head"><b>Slip gaji</b><span>simulasi per bulan</span></div>
+        <div class="slip-inputs">
+          <div>
+            <label for="gaji">Gaji pokok + tunjangan tetap</label>
+            <div class="money"><input type="text" id="gaji" inputmode="numeric" value="6.000.000" autocomplete="off"></div>
+          </div>
+          <div>
+            <label for="status">Status PTKP</label>
+            <select id="status">
+              <option>TK/0</option><option>TK/1</option><option>TK/2</option><option>TK/3</option>
+              <option>K/0</option><option>K/1</option><option>K/2</option><option>K/3</option>
+            </select>
+          </div>
+        </div>
+        <div class="lines" aria-live="polite">
+          <div class="line"><span>Penghasilan</span><span class="v" id="vGaji"></span></div>
+          <div class="line minus"><span><a href="kalkulator-bpjs/">BPJS Kesehatan</a> <small>1%</small></span><span class="v" id="vKes"></span></div>
+          <div class="line minus"><span><a href="kalkulator-bpjs/">JHT</a> <small>2%</small></span><span class="v" id="vJht"></span></div>
+          <div class="line minus"><span><a href="kalkulator-bpjs/">Jaminan Pensiun</a> <small>1%</small></span><span class="v" id="vJp"></span></div>
+          <div class="line minus"><span><a href="kalkulator-pph21/">PPh 21</a> <small id="vTer"></small></span><span class="v" id="vPph"></span></div>
+          <div class="line extra"><span>+ Lembur? <a href="kalkulator-lembur/">Hitung di sini</a></span><span></span></div>
+        </div>
+        <div class="total"><span>Gaji bersih</span><b id="vThp"></b></div>
+        <p class="slip-note">Perkiraan Januari–November untuk karyawan tetap dengan risiko kerja sangat rendah. Klik nama potongan untuk rincian lengkapnya.</p>
+      </section>
+    </div>
   </section>
 
-  <section class="tools" aria-label="Daftar tools">
-    <a class="tool" href="kalkulator-lembur/">
-      <div class="ico">⏱</div>
-      <h2>Kalkulator Lembur</h2>
-      <p>Hitung upah lembur hari kerja dan hari libur sesuai PP 35/2021, lengkap dengan rincian per jam.</p>
-      <span class="tag live">Buka kalkulator →</span>
-    </a>
-    <a class="tool" href="kalkulator-bpjs/">
-      <div class="ico">🛡</div>
-      <h2>Kalkulator BPJS</h2>
-      <p>Hitung potongan gaji dan iuran perusahaan untuk BPJS Kesehatan, JHT, JP, JKK, dan JKM tahun 2026.</p>
-      <span class="tag live">Buka kalkulator →</span>
-    </a>
-    <a class="tool" href="kalkulator-pph21/">
-      <div class="ico">🧾</div>
-      <h2>Kalkulator PPh 21</h2>
-      <p>Hitung pajak gaji bulanan dengan tarif TER dan perkiraan potongan bulan Desember.</p>
-      <span class="tag live">Buka kalkulator →</span>
-    </a>
-    <a class="tool" href="kalkulator-pesangon/">
-      <div class="ico">📅</div>
-      <h2>Masa Kerja & Pesangon</h2>
-      <p>Hitung masa kerja, pesangon, UPMK, uang penggantian hak, dan pajaknya untuk setiap alasan PHK.</p>
-      <span class="tag live">Buka kalkulator →</span>
-    </a>
-    <a class="tool" href="penggabung-excel/">
-      <div class="ico">📊</div>
-      <h2>Penggabung File Excel</h2>
-      <p>Gabungkan banyak file Excel/CSV menjadi satu, dengan kolom dicocokkan otomatis.</p>
-      <span class="tag live">Buka tool →</span>
-    </a>
-    <a class="tool" href="penghapus-duplikat/">
-      <div class="ico">🧹</div>
-      <h2>Penghapus Data Duplikat</h2>
-      <p>Temukan dan pisahkan baris ganda di data karyawan atau absensi berdasarkan NIK atau kolom lain.</p>
-      <span class="tag live">Buka tool →</span>
-    </a>
+  <section class="index" id="alat">
+    <h2 class="section-h">Pilih alat yang kamu butuhkan</h2>
+    <p class="section-p">Empat kalkulator untuk hak karyawan dan dua alat untuk merapikan data Excel. Semuanya gratis dan bisa langsung dipakai.</p>
+
+    <div class="group" id="hak">
+      <h3>Gaji & hak karyawan<small>Mengacu pada peraturan yang berlaku</small></h3>
+      <ul class="tools">
+        <li><a class="tool" href="kalkulator-lembur/"><span><b>Kalkulator Lembur</b><span class="d">Upah lembur hari kerja dan hari libur, dirinci per jam.</span></span><span class="tag">PP 35/2021</span><svg class="chev" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li><a class="tool" href="kalkulator-bpjs/"><span><b>Kalkulator BPJS</b><span class="d">Potongan gaji karyawan dan iuran perusahaan untuk lima program.</span></span><span class="tag">Batas upah 2026</span><svg class="chev" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li><a class="tool" href="kalkulator-pph21/"><span><b>Kalkulator PPh 21</b><span class="d">Pajak gaji bulanan dengan tarif TER dan perkiraan potongan Desember.</span></span><span class="tag">PP 58/2023</span><svg class="chev" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li><a class="tool" href="kalkulator-pesangon/"><span><b>Masa Kerja & Pesangon</b><span class="d">Pesangon, UPMK, dan uang penggantian hak untuk 23 alasan PHK.</span></span><span class="tag">PP 35/2021</span><svg class="chev" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+      </ul>
+    </div>
+
+    <div class="group" id="excel">
+      <h3>Data Excel<small>Diproses di browser, file tidak diupload</small></h3>
+      <ul class="tools">
+        <li><a class="tool" href="penggabung-excel/"><span><b>Penggabung File Excel</b><span class="d">Satukan banyak file Excel atau CSV jadi satu tabel, kolom dicocokkan otomatis.</span></span><span class="tag">.xlsx .csv</span><svg class="chev" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li><a class="tool" href="penghapus-duplikat/"><span><b>Penghapus Data Duplikat</b><span class="d">Temukan NIK atau baris ganda, lalu pisahkan untuk diperiksa.</span></span><span class="tag">.xlsx .csv</span><svg class="chev" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+      </ul>
+    </div>
   </section>
 
-  <section class="why">
-    <div><h3>🔒 Data tetap di perangkat</h3><p>Perhitungan berjalan di browser. Tidak ada data yang dikirim ke server.</p></div>
-    <div><h3>📘 Mengacu pada regulasi</h3><p>Rumus mengikuti peraturan yang berlaku dan diperbarui jika ada perubahan.</p></div>
-    <div><h3>📱 Nyaman di HP</h3><p>Bisa dipakai di ponsel maupun komputer tanpa perlu instal aplikasi.</p></div>
+  <section class="assure" aria-label="Kenapa memakai Kalkulator HR">
+    <div><h3>Data tetap di perangkatmu</h3><p>Semua perhitungan dan pengolahan file berjalan di browser. Tidak ada data yang dikirim ke server.</p></div>
+    <div><h3>Mengacu pada regulasi</h3><p>Rumus mengikuti PP 35/2021, PP 58/2023, dan batas upah BPJS terbaru, lalu diperbarui jika aturannya berubah.</p></div>
+    <div><h3>Rincian yang bisa dicek</h3><p>Setiap hasil menampilkan langkah hitungnya, jadi kamu bisa mencocokkan dengan slip gaji atau laporan sendiri.</p></div>
   </section>
 
   <!-- Kotak donasi disembunyikan: hapus atribut "hidden" setelah link Saweria/Trakteer siap -->
@@ -130,8 +223,42 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
 </main>
 
 <footer>
-  <div class="wrap">© <span id="yr"></span> Kalkulator HR · Hasil perhitungan bersifat simulasi dan bukan nasihat hukum.</div>
+  <div class="wrap">© <span id="yr"></span> Kalkulator HR. Hasil perhitungan bersifat simulasi dan bukan nasihat hukum atau pajak.</div>
 </footer>
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+
+<script>
+/* Simulasi slip gaji: BPJS 2026 & PPh 21 TER (PP 58/2023) */
+const TER = {
+  A: [[5400000,0],[5650000,.0025],[5950000,.005],[6300000,.0075],[6750000,.01],[7500000,.0125],[8550000,.015],[9650000,.0175],[10050000,.02],[10350000,.0225],[10700000,.025],[11050000,.03],[11600000,.035],[12500000,.04],[13750000,.05],[15100000,.06],[16950000,.07],[19750000,.08],[24150000,.09],[26450000,.10],[28000000,.11],[30050000,.12],[32400000,.13],[35400000,.14],[39100000,.15],[43850000,.16],[47800000,.17],[51400000,.18],[56300000,.19],[62200000,.20],[68600000,.21],[77500000,.22],[89000000,.23],[103000000,.24],[125000000,.25],[157000000,.26],[206000000,.27],[337000000,.28],[454000000,.29],[550000000,.30],[695000000,.31],[910000000,.32],[1400000000,.33],[Infinity,.34]],
+  B: [[6200000,0],[6500000,.0025],[6850000,.005],[7300000,.0075],[9200000,.01],[10750000,.015],[11250000,.02],[11600000,.025],[12600000,.03],[13600000,.04],[14950000,.05],[16400000,.06],[18450000,.07],[21850000,.08],[26000000,.09],[27700000,.10],[29350000,.11],[31450000,.12],[33950000,.13],[37100000,.14],[41100000,.15],[45800000,.16],[49500000,.17],[53800000,.18],[58500000,.19],[64000000,.20],[71000000,.21],[80000000,.22],[93000000,.23],[109000000,.24],[129000000,.25],[163000000,.26],[211000000,.27],[374000000,.28],[459000000,.29],[555000000,.30],[704000000,.31],[957000000,.32],[1405000000,.33],[Infinity,.34]],
+  C: [[6600000,0],[6950000,.0025],[7350000,.005],[7800000,.0075],[8850000,.01],[9800000,.0125],[10950000,.015],[11200000,.0175],[12050000,.02],[12950000,.03],[14150000,.04],[15550000,.05],[17050000,.06],[19500000,.07],[22700000,.08],[26600000,.09],[28100000,.10],[30100000,.11],[32600000,.12],[35400000,.13],[38900000,.14],[43000000,.15],[47400000,.16],[51200000,.17],[55800000,.18],[60400000,.19],[66700000,.20],[74500000,.21],[83200000,.22],[95600000,.23],[110000000,.24],[134000000,.25],[169000000,.26],[221000000,.27],[390000000,.28],[463000000,.29],[561000000,.30],[709000000,.31],[965000000,.32],[1419000000,.33],[Infinity,.34]]
+};
+const KAT = { 'TK/0':'A', 'TK/1':'A', 'K/0':'A', 'TK/2':'B', 'TK/3':'B', 'K/1':'B', 'K/2':'B', 'K/3':'C' };
+const tarifTER = (k, b) => { for (const [atas, t] of TER[k]) if (b <= atas) return t; return .34; };
+function hitungSlip(g, status){
+  const kes = Math.min(g, 12e6) * .01, jht = g * .02, jp = Math.min(g, 11086300) * .01;
+  const bruto = g + Math.min(g, 12e6) * .04 + g * .0024 + g * .003;   // premi BPJS Kesehatan, JKK, JKM dari perusahaan
+  const kat = KAT[status], t = tarifTER(kat, bruto), pph = Math.floor(bruto * t);
+  return { kes, jht, jp, pph, kat, t, thp:g - kes - jht - jp - pph };
+}
+const $ = s => document.querySelector(s);
+const rp = n => 'Rp' + Math.round(n).toLocaleString('id-ID');
+const pct = x => (x * 100).toLocaleString('id-ID', { maximumFractionDigits:2 }) + '%';
+function render(){
+  const g = Number($('#gaji').value.replace(/\D/g, '')) || 0;
+  const h = hitungSlip(g, $('#status').value);
+  $('#vGaji').textContent = rp(g);
+  $('#vKes').textContent = '−' + rp(h.kes);
+  $('#vJht').textContent = '−' + rp(h.jht);
+  $('#vJp').textContent = '−' + rp(h.jp);
+  $('#vPph').textContent = '−' + rp(h.pph);
+  $('#vTer').textContent = `TER ${h.kat} ${pct(h.t)}`;
+  $('#vThp').textContent = rp(h.thp);
+}
+$('#gaji').addEventListener('input', e => { const v = Number(e.target.value.replace(/\D/g, '')) || 0; e.target.value = v ? v.toLocaleString('id-ID') : ''; render(); });
+$('#status').addEventListener('change', render);
+$('#yr').textContent = new Date().getFullYear();
+render();
+</script>
 </body>
 </html>

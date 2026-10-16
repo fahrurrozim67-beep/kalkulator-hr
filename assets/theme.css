@@ -1,0 +1,88 @@
+/* Tema bersama Kalkulator HR — dimuat setelah gaya bawaan tiap halaman.
+   Motif: slip gaji continuous form (printer dot-matrix). */
+:root{
+  --bg:#EEF1F6; --surface:#FFFFFF; --ink:#1A2233; --muted:#5B6578; --line:#D9DEE8;
+  --brand:#24408E; --brand-ink:#FFFFFF; --brand-soft:#E4E9F6;
+  --accent:#D9A400; --accent-soft:#FFF5D1; --warn:#C0392B; --warn-soft:#FBE7E4;
+  --shadow:0 1px 0 rgba(26,34,51,.03),0 14px 30px -22px rgba(26,34,51,.35);
+  --paper:#FFFFFF; --paper-ink:#1A2233; --marker:#FFE15A; --stamp:#C0392B; --greenbar:#EEF6F0;
+  --mono:"Courier Prime",ui-monospace,"Courier New",monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0F1422; --surface:#171E30; --ink:#E6EAF3; --muted:#9AA4B8; --line:#283149;
+    --brand:#8EA6FF; --brand-ink:#0F1422; --brand-soft:#1D2747;
+    --accent:#F2C94C; --accent-soft:#2E2A18; --warn:#FF8A75; --warn-soft:#3A1F1B;
+    --shadow:none; --paper:#F6F7FA;
+  }
+}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+
+/* Kepala halaman */
+header.top{background:transparent;border-bottom:0}
+header.top .wrap{height:68px}
+.logo{font-size:17px}
+.logo-mark{border-radius:8px;width:32px;height:32px;font-size:12.5px;font-weight:800;letter-spacing:-.02em}
+.hero{padding:30px 0 28px}
+.hero h1{font-size:clamp(30px,5vw,46px);letter-spacing:-.04em;line-height:1.08;max-width:18ch}
+.badge{border-radius:6px;font-weight:700}
+.card{border-radius:14px}
+.step span{background:var(--brand);color:var(--brand-ink)}
+
+/* Panel hasil = slip cetak */
+.card.result{position:relative;background:var(--paper);color:var(--paper-ink);border:0;border-radius:3px;
+  padding:26px 40px 28px;
+  box-shadow:0 26px 48px -26px rgba(20,30,60,.5),0 2px 6px rgba(20,30,60,.08);
+  background-image:repeating-linear-gradient(to bottom,transparent 0 44px,var(--greenbar) 44px 88px)}
+.card.result::before,.card.result::after{content:"";position:absolute;top:0;bottom:0;width:22px;
+  background:radial-gradient(circle,var(--bg) 4px,transparent 4.6px) 50% 10px/22px 22px repeat-y}
+.card.result::before{left:0;border-right:1px dashed #C7CEDB}
+.card.result::after{right:0;border-left:1px dashed #C7CEDB}
+.card.result > *{position:relative;z-index:1}
+.card.result .k{color:#5B6578;opacity:1}
+.card.result .total{display:inline-block;font-family:var(--mono);font-weight:700;letter-spacing:-.01em;padding:0 4px;margin-left:-4px;
+  background:linear-gradient(transparent 52%,var(--marker) 52%,var(--marker) 90%,transparent 90%)}
+.card.result .stat{background:#fff;border:1px solid #DDE2EC;border-radius:6px}
+.card.result .stat b,
+.card.result .ln span:last-child,
+.card.result .bd-row span:not(:first-child),
+.card.result .bd-line span:last-child,
+.card.result .bd-title span:last-child,
+.card.result .desc b,
+.card.result .basis{font-family:var(--mono)}
+.card.result .stat b{font-size:17px}
+.card.result .bd,.card.result .breakdown{border-top:1.5px dashed #B9C1D1}
+.card.result .ln,.card.result .bd-row{border-bottom:1px dotted #C7CEDB}
+.card.result .ln.sum,.card.result .bd-row.sum{border-bottom:0}
+.card.result .ln.minus span:last-child{color:var(--stamp)}
+.card.result .ter-tag{background:#E4E9F6;color:#24408E;border-radius:6px}
+.card.result .desc{background:#FFF5D1;border-radius:6px}
+.card.result .actions{margin-top:4px}
+.card.result .btn-line{background:#fff;border-color:#C7CEDB;color:#1A2233}
+.card.result .btn-primary{background:#24408E;color:#fff}
+.card.result .btn-primary:hover{filter:brightness(1.1)}
+.card.result .empty{color:#5B6578;opacity:1}
+@media(max-width:420px){.card.result{padding:22px 32px 24px}}
+
+/* Kotak hasil di tool Excel tetap kartu biasa, bukan slip */
+.card.result:has(.preview),.card.result:has(#out){background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:22px;background-image:none;box-shadow:var(--shadow)}
+.card.result:has(.preview)::before,.card.result:has(.preview)::after,
+.card.result:has(#out)::before,.card.result:has(#out)::after{content:none}
+.card.result:has(.preview) .btn-primary,.card.result:has(#out) .btn-primary{background:var(--brand);color:var(--brand-ink)}
+.card.result:has(.preview) .btn-line,.card.result:has(#out) .btn-line{background:var(--surface);border-color:var(--line);color:var(--ink)}
+.card.result:has(.preview) .empty,.card.result:has(#out) .empty{color:var(--muted)}
+
+/* Artikel */
+article th{background:var(--brand);color:var(--brand-ink)}
+.note{background:var(--accent-soft);color:var(--ink);border-left:4px solid var(--accent)}
+.related{border-radius:10px}
+.related:hover{border-color:var(--brand)}
+footer{border-top:1px solid var(--line)}
+
+@media print{
+  .card.result{box-shadow:none;background-image:none}
+  .card.result::before,.card.result::after{content:none}
+}
+
+/* Kolom kunci di Penghapus Duplikat: tanda stabilo */
+.preview th.key{background:var(--marker);color:#1A2233}
