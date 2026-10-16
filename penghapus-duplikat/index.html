@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hapus Data Duplikat Excel Online Gratis – Bersihkan Baris Ganda</title>
+<meta name="description" content="Hapus data duplikat di file Excel atau CSV secara online dan gratis. Pilih kolom kunci seperti NIK atau nama, lihat baris ganda yang ditemukan, lalu unduh data bersih. Diproses di browser tanpa upload.">
+<meta name="keywords" content="hapus duplikat excel, menghapus data ganda excel, remove duplicates online, cari data duplikat, bersihkan data excel, duplikat NIK, penghapus duplikat">
+<!-- Ganti alamat ini jika nanti pakai domain sendiri -->
+<link rel="canonical" href="https://fahrurrozim67-beep.github.io/kalkulator-hr/penghapus-duplikat/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fahrurrozim67-beep.github.io/kalkulator-hr/penghapus-duplikat/">
+<meta property="og:title" content="Penghapus Data Duplikat Excel Online">
+<meta property="og:description" content="Temukan dan hapus baris ganda di Excel atau CSV dalam hitungan detik. Data tidak dikirim ke server.">
+<meta name="theme-color" content="#0f6e56">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ===== TEMPAT KODE GOOGLE ADSENSE (tempel di sini setelah disetujui) ===== -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Penghapus Data Duplikat",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "id",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IDR" },
+      "description": "Tool online untuk menemukan dan menghapus baris duplikat di file Excel dan CSV berdasarkan kolom pilihan, diproses di browser."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Bagaimana cara menghapus data duplikat di Excel?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Unggah file, pilih kolom yang menjadi kunci (misalnya NIK), lalu tool akan menandai baris yang nilainya sama. Unduh data bersih dan daftar duplikatnya dalam satu file Excel." } },
+        { "@type": "Question", "name": "Apakah data saya aman?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ya. File diproses sepenuhnya di browser kamu dan tidak dikirim ke server mana pun." } },
+        { "@type": "Question", "name": "Baris mana yang disimpan jika ada duplikat?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Kamu bisa memilih menyimpan kemunculan pertama atau terakhir. Baris lain yang sama dipindahkan ke sheet Duplikat lengkap dengan nomor baris aslinya." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#f5f4ee; --surface:#ffffff; --ink:#15211d; --muted:#5d6a65; --line:#e3e1d7;
+  --brand:#0f6e56; --brand-ink:#ffffff; --brand-soft:#e6f2ec; --accent:#e8932c; --accent-soft:#fdf1e2;
+  --warn:#b4371f; --warn-soft:#fbe9e4; --radius:16px;
+  --shadow:0 1px 2px rgba(20,33,29,.05),0 8px 24px rgba(20,33,29,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1513; --surface:#17201d; --ink:#e8efec; --muted:#9aa8a2; --line:#27332f;
+    --brand:#3fb68f; --brand-ink:#08130f; --brand-soft:#16302a; --accent:#f0a64a; --accent-soft:#33261a;
+    --warn:#ff8a70; --warn-soft:#3a1f19; --shadow:none;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;font-size:16px}
+a{color:var(--brand)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+header.top{border-bottom:1px solid var(--line);background:var(--surface)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;color:var(--ink);letter-spacing:-.02em}
+.logo-mark{width:30px;height:30px;border-radius:9px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:15px}
+nav.top a{font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;margin-left:18px}
+nav.top a:hover{color:var(--ink)}
+@media(max-width:480px){nav.top a{margin-left:12px;font-size:13px}nav.top a[href="#faq"]{display:none}}
+
+.hero{padding:40px 0 24px}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--brand-soft);color:var(--brand);font-weight:700;font-size:12.5px;padding:5px 11px;border-radius:999px;letter-spacing:.02em}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.15;letter-spacing:-.03em;margin:14px 0 10px;font-weight:800}
+.lead{color:var(--muted);font-size:17px;max-width:660px;margin:0}
+
+.grid{display:grid;grid-template-columns:1fr;gap:20px;padding-bottom:20px}
+@media(min-width:900px){.grid{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:start}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.step{display:flex;align-items:center;gap:10px;margin:0 0 16px;font-size:17px;font-weight:700;letter-spacing:-.01em}
+.step span{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--surface);display:grid;place-items:center;font-size:13px;flex:none}
+
+.drop{display:block;border:2px dashed var(--line);border-radius:14px;padding:28px 16px;text-align:center;background:var(--bg);cursor:pointer;transition:border-color .15s,background .15s}
+.drop:hover,.drop.over{border-color:var(--brand);background:var(--brand-soft)}
+.drop b{display:block;font-size:16px;margin:6px 0 2px}
+.drop small{color:var(--muted)}
+.drop .ico{font-size:30px}
+.fileinfo{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:11px;padding:9px 12px;background:var(--bg);font-size:14px;margin-top:14px}
+.fileinfo .fi{width:30px;height:30px;border-radius:8px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;font-weight:800;font-size:11px;flex:none}
+.fileinfo .fn{flex:1;min-width:0}
+.fileinfo .fn b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fileinfo .fn small{color:var(--muted)}
+.fileinfo button{border:0;background:none;color:var(--muted);cursor:pointer;font:inherit;font-weight:600;font-size:13px}
+.fileinfo button:hover{color:var(--warn)}
+
+label.lbl{display:block;font-size:13.5px;font-weight:600;margin:0 0 6px}
+.hint{font-size:12.5px;color:var(--muted);margin-top:5px}
+.field{margin-bottom:16px}
+.field:last-child{margin-bottom:0}
+input[type=number],select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:11px;padding:10px 13px;outline:none}
+input:focus,select:focus{border-color:var(--brand);background:var(--surface)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.row2{grid-template-columns:1fr}}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:4px;gap:4px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:transparent;color:var(--muted);padding:8px 6px;border-radius:9px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.chk{display:flex;align-items:flex-start;gap:10px;font-size:14px;margin-bottom:10px;cursor:pointer}
+.chk input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--brand);flex:none}
+.chk small{display:block;color:var(--muted);font-size:12.5px}
+.cols-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.cols-head button{border:0;background:none;color:var(--brand);font:inherit;font-size:13px;font-weight:700;cursor:pointer;padding:0}
+.cols{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.cols label{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:var(--bg);border-radius:999px;padding:5px 11px;font-size:13.5px;font-weight:600;cursor:pointer;max-width:100%}
+.cols label span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cols label:has(input:checked){border-color:var(--brand);background:var(--brand-soft);color:var(--brand)}
+.cols input{accent-color:var(--brand);margin:0}
+.disabled{opacity:.5;pointer-events:none}
+
+.btn{font:inherit;font-weight:700;font-size:15px;border-radius:11px;padding:12px 18px;cursor:pointer;border:1.5px solid transparent;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-primary{background:var(--brand);color:var(--brand-ink)}
+.btn-line{background:var(--surface);border-color:var(--line);color:var(--ink)}
+
+.result{margin-bottom:40px}
+.result-head{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.dl{display:flex;gap:8px;flex-wrap:wrap}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.kpi{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--bg)}
+.kpi span{display:block;font-size:12.5px;color:var(--muted);font-weight:600}
+.kpi b{font-size:22px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.kpi.dup b{color:var(--warn)}
+.kpi.ok b{color:var(--brand)}
+@media(max-width:520px){.kpi b{font-size:18px}}
+.tabs{display:flex;gap:6px;margin-bottom:10px}
+.tabs button{font:inherit;font-weight:700;font-size:14px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 14px;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.preview{overflow:auto;max-height:440px;border:1px solid var(--line);border-radius:12px}
+.preview table{border-collapse:collapse;font-size:13px;width:max-content;min-width:100%}
+.preview th,.preview td{padding:7px 12px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);white-space:nowrap;max-width:280px;overflow:hidden;text-overflow:ellipsis;text-align:left}
+.preview th{position:sticky;top:0;background:#1f4e78;color:#fff;font-weight:700;z-index:1}
+.preview th.key{background:#e8932c;color:#1f1405}
+.preview td.muted{color:var(--muted)}
+.preview td.key{font-weight:700}
+.preview tr:nth-child(even) td{background:var(--bg)}
+.empty{color:var(--muted);font-size:14.5px;text-align:center;padding:26px 10px;margin:0}
+.more{margin-top:10px;font-size:13px;color:var(--muted)}
+
+.donate{background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--radius);padding:16px;font-size:14px;margin-bottom:20px}
+.donate a{font-weight:700}
+
+article{padding:8px 0 40px}
+article h2{font-size:clamp(22px,3.5vw,28px);letter-spacing:-.02em;margin:36px 0 10px;line-height:1.25}
+article h3{font-size:18px;margin:24px 0 8px}
+.prose{max-width:760px}
+.note{background:var(--accent-soft);border-radius:12px;padding:14px 16px;font-size:14.5px;margin:16px 0}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+summary{font-weight:700;cursor:pointer}
+details p{margin:10px 0 0}
+.related-wrap{display:grid;gap:10px;margin-top:24px}
+.related{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:var(--ink)}
+.related:hover{border-color:var(--brand)}
+.related b{display:block}
+.related small{color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:13.5px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;transition:.25s;pointer-events:none;z-index:9}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../"><span class="logo-mark">⏱</span>Kalkulator HR</a>
+    <nav class="top"><a href="../">Semua Tools</a><a href="#cara-pakai">Cara Pakai</a><a href="#faq">FAQ</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="badge">🔒 Diproses di browser · File tidak diupload</span>
+    <h1>Penghapus Data Duplikat</h1>
+    <p class="lead">Temukan dan hapus baris ganda di file Excel atau CSV berdasarkan kolom pilihan, misalnya NIK atau nama. Baris duplikat tidak dibuang begitu saja, melainkan dipisahkan supaya bisa kamu periksa.</p>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <h2 class="step"><span>1</span>Pilih file</h2>
+      <label class="drop" id="drop">
+        <input type="file" id="fileInput" accept=".xlsx,.xlsm,.xls,.csv" hidden>
+        <div class="ico">📄</div>
+        <b>Klik atau seret file ke sini</b>
+        <small>.xlsx, .xls, .csv</small>
+      </label>
+      <div id="fileinfo"></div>
+      <div class="row2" style="margin-top:16px">
+        <div class="field">
+          <label class="lbl" for="sheet">Sheet</label>
+          <select id="sheet" disabled><option>–</option></select>
+        </div>
+        <div class="field">
+          <label class="lbl" for="hdrRow">Judul kolom di baris ke-</label>
+          <input type="number" id="hdrRow" min="1" max="50" value="1" inputmode="numeric">
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="cardOpt">
+      <h2 class="step"><span>2</span>Kolom kunci & pengaturan</h2>
+      <div class="field">
+        <div class="cols-head">
+          <label class="lbl" style="margin:0">Baris dianggap duplikat jika kolom ini sama</label>
+          <span><button type="button" id="selAll">Semua</button> · <button type="button" id="selNone">Kosongkan</button></span>
+        </div>
+        <div class="cols" id="cols"><span class="hint">Pilih file dulu untuk melihat daftar kolom.</span></div>
+        <div class="hint">Contoh: pilih <b>NIK</b> saja untuk mencari karyawan yang tercatat lebih dari sekali, atau pilih semua kolom untuk mencari baris yang benar-benar identik.</div>
+      </div>
+      <div class="field">
+        <label class="lbl">Baris yang disimpan</label>
+        <div class="seg" id="segKeep">
+          <button type="button" data-v="first" aria-pressed="true">Kemunculan pertama</button>
+          <button type="button" data-v="last" aria-pressed="false">Kemunculan terakhir</button>
+        </div>
+      </div>
+      <label class="chk"><input type="checkbox" id="ignoreCase" checked><span>Abaikan huruf besar/kecil<small>"BUDI" dan "Budi" dianggap sama.</small></span></label>
+      <label class="chk"><input type="checkbox" id="trimSpace" checked><span>Abaikan spasi berlebih<small>"Budi  Santoso " dan "Budi Santoso" dianggap sama.</small></span></label>
+      <label class="chk"><input type="checkbox" id="skipBlank" checked><span>Jangan anggap duplikat jika kolom kunci kosong<small>Baris dengan NIK kosong tidak saling dihapus.</small></span></label>
+    </section>
+  </div>
+
+  <section class="card result" aria-live="polite">
+    <div class="result-head">
+      <h2 class="step" style="margin:0"><span>3</span>Hasil</h2>
+      <div class="dl">
+        <button type="button" class="btn btn-line" id="dlCsv" disabled>⬇ CSV data bersih</button>
+        <button type="button" class="btn btn-primary" id="dlXlsx" disabled>⬇ Unduh Excel</button>
+      </div>
+    </div>
+    <div id="out"><p class="empty">Pilih file untuk mulai mencari data duplikat.</p></div>
+  </section>
+
+  <div class="donate">
+    ☕ Tool ini menghemat waktumu? Dukung pengembangannya lewat <!-- GANTI link di bawah dengan link Saweria/Trakteer kamu --><a href="#" target="_blank" rel="noopener">traktir kopi</a> agar tetap gratis.
+  </div>
+
+  <!-- ===== SLOT IKLAN TENGAH (AdSense) ===== -->
+
+  <article class="prose">
+    <h2 id="cara-pakai">Cara menghapus data duplikat di Excel</h2>
+    <ol>
+      <li><strong>Pilih file</strong> Excel atau CSV yang ingin dibersihkan, lalu pilih sheet-nya.</li>
+      <li><strong>Tentukan kolom kunci.</strong> Baris dianggap duplikat jika semua kolom yang dipilih bernilai sama.</li>
+      <li><strong>Periksa hasilnya</strong> di tab "Data bersih" dan "Duplikat".</li>
+      <li><strong>Unduh</strong> file Excel berisi dua sheet: Data Bersih dan Duplikat, lengkap dengan nomor baris asli.</li>
+    </ol>
+
+    <h3>Memilih kolom kunci yang tepat</h3>
+    <ul>
+      <li><strong>Data karyawan:</strong> pilih NIK atau nomor induk karyawan, karena nama bisa sama untuk orang yang berbeda.</li>
+      <li><strong>Rekap absensi:</strong> pilih NIK dan Tanggal untuk menemukan absensi yang tercatat dua kali di hari yang sama.</li>
+      <li><strong>Data hasil gabungan:</strong> pilih semua kolom untuk membuang baris yang benar-benar identik.</li>
+    </ul>
+
+    <h3>Kenapa tidak langsung pakai Remove Duplicates di Excel?</h3>
+    <p>Fitur bawaan Excel langsung menghapus baris tanpa memperlihatkan apa yang dihapus, dan menganggap "Budi" dan "budi " sebagai data berbeda. Tool ini menunjukkan setiap baris duplikat beserta nomor baris aslinya dan baris mana yang disimpan, sehingga kamu bisa memeriksa sebelum memakai datanya.</p>
+
+    <div class="note"><strong>Privasi terjamin:</strong> file dibaca dan diproses sepenuhnya di browser kamu. Data karyawan seperti NIK atau gaji tidak dikirim ke server mana pun.</div>
+
+    <h2 id="faq">Pertanyaan yang sering diajukan</h2>
+    <details><summary>Apakah file asli saya berubah?</summary><p>Tidak. File asli tidak diubah sama sekali. Hasil pembersihan diunduh sebagai file baru.</p></details>
+    <details><summary>Apa arti kolom "Duplikat dari baris"?</summary><p>Kolom itu menunjukkan nomor baris di file asli yang disimpan sebagai data utama. Dengan begitu kamu bisa membandingkan baris duplikat dengan baris yang dipertahankan.</p></details>
+    <details><summary>Apakah NIK berawalan 0 tetap aman?</summary><p>Ya. Isi file CSV dibaca sebagai teks apa adanya, sehingga angka nol di depan tidak hilang.</p></details>
+    <details><summary>Bagaimana jika file berisi banyak sheet?</summary><p>Pilih sheet yang ingin dibersihkan di menu Sheet. Untuk membersihkan data dari banyak sheet atau banyak file sekaligus, gabungkan dulu dengan Penggabung File Excel.</p></details>
+
+    <div class="related-wrap">
+      <a class="related" href="../penggabung-excel/"><span style="font-size:24px">📊</span><span><b>Penggabung File Excel</b><small>Gabungkan banyak file Excel & CSV jadi satu →</small></span></a>
+      <a class="related" href="../kalkulator-pph21/"><span style="font-size:24px">🧾</span><span><b>Kalkulator PPh 21</b><small>Hitung pajak gaji dengan tarif TER 2026 →</small></span></a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> Kalkulator HR · Alat bantu gratis untuk HR, admin, dan karyawan Indonesia.<br>
+    Pembacaan dan penulisan file memakai xlsx-js-style (lisensi Apache 2.0). Semua proses berjalan di browser.
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="../assets/vendor/xlsx-js-style/xlsx.bundle.js"></script>
+<script>
+// ===LOGIC-START===
+const isBlank = v => v === null || v === undefined || (typeof v === 'string' && v.trim() === '');
+const pad = n => String(n).padStart(2, '0');
+const fmtCell = v => v instanceof Date ? `${pad(v.getDate())}/${pad(v.getMonth() + 1)}/${v.getFullYear()}` : v === null || v === undefined ? '' : String(v);
+
+function bacaSheet(aoa, headerRow){
+  const hdr = aoa[headerRow - 1] || [];
+  const data = [];
+  for (let i = headerRow; i < aoa.length; i++){
+    const r = aoa[i];
+    if (r && !r.every(isBlank)) data.push({ row:r, excelRow:i + 1 });
+  }
+  const width = Math.max(hdr.length, ...data.map(d => d.row.length), 0);
+  const seen = {}, headers = [];
+  for (let i = 0; i < width; i++){
+    let h = isBlank(hdr[i]) ? `Kolom ${i + 1}` : String(hdr[i]).trim();
+    const k = h.toLowerCase();
+    if (seen[k]){ seen[k]++; h = `${h} (${seen[k]})`; } else seen[k] = 1;
+    headers.push(h);
+  }
+  data.forEach(d => { const o = new Array(width); for (let i = 0; i < width; i++) o[i] = isBlank(d.row[i]) ? null : d.row[i]; d.row = o; });
+  return { headers, data };
+}
+
+function cariDuplikat(data, keys, opt){
+  // data: [{row, excelRow}], keys: indeks kolom kunci
+  const norm = v => {
+    let s = fmtCell(v);
+    if (opt.trimSpace) s = s.trim().replace(/\s+/g, ' ');
+    if (opt.ignoreCase) s = s.toLowerCase();
+    return s;
+  };
+  const order = opt.keep === 'last' ? data.map((_, i) => data.length - 1 - i) : data.map((_, i) => i);
+  const kept = new Map(), isDup = new Array(data.length).fill(false), dupOf = new Array(data.length).fill(null);
+  for (const i of order){
+    const parts = keys.map(k => norm(data[i].row[k]));
+    if (opt.skipBlank && parts.every(p => p === '')) continue;
+    const key = JSON.stringify(parts);
+    if (kept.has(key)){ isDup[i] = true; dupOf[i] = data[kept.get(key)].excelRow; }
+    else kept.set(key, i);
+  }
+  const bersih = [], duplikat = [];
+  data.forEach((d, i) => { if (isDup[i]) duplikat.push({ ...d, dupOf:dupOf[i] }); else bersih.push(d); });
+  const grup = new Set(duplikat.map(d => d.dupOf)).size;
+  return { bersih, duplikat, grup };
+}
+// ===LOGIC-END===
+
+const $ = s => document.querySelector(s);
+const st = { name:null, size:0, wb:null, keep:'first', tab:'dup', parsed:null, keys:null, res:null };
+function toast(t){ const el = $('#toast'); el.textContent = t; el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 2000); }
+const fmtSize = b => b > 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(b / 1024)) + ' KB';
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+
+async function loadFile(f){
+  try {
+    const buf = await f.arrayBuffer();
+    st.wb = /\.csv$/i.test(f.name)
+      ? XLSX.read(new TextDecoder('utf-8').decode(buf), { type:'string', raw:true })
+      : XLSX.read(buf, { type:'array', cellDates:true });
+    st.name = f.name; st.size = f.size; st.keys = null;
+    $('#sheet').innerHTML = st.wb.SheetNames.map(n => `<option>${esc(n)}</option>`).join('');
+    $('#sheet').disabled = st.wb.SheetNames.length < 2;
+    parse();
+  } catch (e){ toast('File tidak bisa dibaca'); }
+}
+
+function parse(){
+  if (!st.wb) return;
+  const ws = st.wb.Sheets[$('#sheet').value || st.wb.SheetNames[0]];
+  const aoa = XLSX.utils.sheet_to_json(ws, { header:1, range:0, defval:null, raw:true, blankrows:true });
+  st.parsed = bacaSheet(aoa, Math.max(1, parseInt($('#hdrRow').value, 10) || 1));
+  if (!st.keys || st.keys.some(k => k >= st.parsed.headers.length)) st.keys = st.parsed.headers.map((_, i) => i);
+  $('#fileinfo').innerHTML = `<div class="fileinfo"><span class="fi">${(st.name.split('.').pop() || '').toUpperCase().slice(0, 4)}</span><span class="fn"><b title="${esc(st.name)}">${esc(st.name)}</b><small>${fmtSize(st.size)} · ${st.wb.SheetNames.length} sheet · ${st.parsed.data.length.toLocaleString('id-ID')} baris data</small></span><button type="button" id="rmFile">Ganti</button></div>`;
+  $('#rmFile').onclick = () => $('#fileInput').click();
+  $('#cols').innerHTML = st.parsed.headers.map((h, i) => `<label><input type="checkbox" value="${i}" ${st.keys.includes(i) ? 'checked' : ''}><span title="${esc(h)}">${esc(h)}</span></label>`).join('');
+  run();
+}
+
+function run(){
+  if (!st.parsed) return;
+  st.keys = [...document.querySelectorAll('#cols input:checked')].map(c => +c.value);
+  if (!st.keys.length){
+    st.res = null;
+    $('#out').innerHTML = '<p class="empty">Pilih minimal satu kolom kunci.</p>';
+    $('#dlXlsx').disabled = $('#dlCsv').disabled = true; return;
+  }
+  st.res = cariDuplikat(st.parsed.data, st.keys, { keep:st.keep, ignoreCase:$('#ignoreCase').checked, trimSpace:$('#trimSpace').checked, skipBlank:$('#skipBlank').checked });
+  const r = st.res, total = st.parsed.data.length;
+  if (!r.duplikat.length && st.tab === 'dup') st.tab = 'clean';
+  const rows = st.tab === 'dup' ? r.duplikat : r.bersih;
+  const view = rows.slice(0, 100);
+  const H = st.parsed.headers;
+  $('#out').innerHTML = `
+    <div class="kpis">
+      <div class="kpi"><span>Total baris</span><b>${total.toLocaleString('id-ID')}</b></div>
+      <div class="kpi ok"><span>Data bersih</span><b>${r.bersih.length.toLocaleString('id-ID')}</b></div>
+      <div class="kpi dup"><span>Duplikat</span><b>${r.duplikat.length.toLocaleString('id-ID')}</b></div>
+    </div>
+    ${r.duplikat.length ? `<div class="tabs" id="tabs"><button type="button" data-t="dup" aria-pressed="${st.tab === 'dup'}">Duplikat (${r.duplikat.length.toLocaleString('id-ID')})</button><button type="button" data-t="clean" aria-pressed="${st.tab === 'clean'}">Data bersih</button></div>`
+      : `<p class="empty" style="padding:6px 0 14px">✅ Tidak ditemukan data duplikat berdasarkan kolom yang dipilih.</p>`}
+    <div class="preview"><table><thead><tr><th>Baris asli</th>${st.tab === 'dup' ? '<th>Duplikat dari baris</th>' : ''}${H.map((h, i) => `<th class="${st.keys.includes(i) ? 'key' : ''}" title="${esc(h)}">${esc(h)}</th>`).join('')}</tr></thead>
+    <tbody>${view.map(d => `<tr><td class="muted">${d.excelRow}</td>${st.tab === 'dup' ? `<td class="muted">${d.dupOf}</td>` : ''}${d.row.map((v, i) => `<td class="${st.keys.includes(i) ? 'key' : ''}" title="${esc(fmtCell(v))}">${esc(fmtCell(v))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>
+    ${rows.length > 100 ? `<div class="more">Menampilkan 100 dari ${rows.length.toLocaleString('id-ID')} baris. Semua baris ada di file unduhan.</div>` : ''}`;
+  const tabs = $('#tabs');
+  if (tabs) tabs.onclick = e => { const b = e.target.closest('button'); if (b){ st.tab = b.dataset.t; run(); } };
+  $('#dlXlsx').disabled = $('#dlCsv').disabled = false;
+}
+
+function buatSheet(header, rows){
+  const ws = XLSX.utils.aoa_to_sheet([header].concat(rows), { cellDates:false, dateNF:'dd/mm/yyyy' });
+  const range = XLSX.utils.decode_range(ws['!ref']);
+  const b = { style:'thin', color:{ rgb:'A6A6A6' } }, borders = { top:b, bottom:b, left:b, right:b };
+  const withBorders = (range.e.r + 1) * (range.e.c + 1) <= 300000;
+  for (let c = 0; c <= range.e.c; c++){
+    const ref = XLSX.utils.encode_cell({ r:0, c });
+    if (ws[ref]) ws[ref].s = { fill:{ patternType:'solid', fgColor:{ rgb:'1F4E78' } }, font:{ bold:true, color:{ rgb:'FFFFFF' } }, alignment:{ vertical:'center', wrapText:true }, border:borders };
+    if (withBorders) for (let r = 1; r <= range.e.r; r++){
+      const rr = XLSX.utils.encode_cell({ r, c });
+      if (!ws[rr]) ws[rr] = { t:'z' };
+      ws[rr].s = { border:borders };
+    }
+  }
+  ws['!cols'] = header.map((h, c) => {
+    let w = String(h).length;
+    for (let r = 0; r < Math.min(rows.length, 300); r++) w = Math.max(w, fmtCell(rows[r][c]).length);
+    return { wch:Math.min(Math.max(w + 2, 8), 50) };
+  });
+  ws['!autofilter'] = { ref:XLSX.utils.encode_range({ s:{ r:0, c:0 }, e:{ r:range.e.r, c:range.e.c } }) };
+  return ws;
+}
+const baseName = () => (st.name || 'data').replace(/\.[^.]+$/, '');
+
+$('#dlXlsx').addEventListener('click', () => {
+  if (!st.res) return;
+  const H = st.parsed.headers, wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, buatSheet(H, st.res.bersih.map(d => d.row)), 'Data Bersih');
+  XLSX.utils.book_append_sheet(wb, buatSheet(['Baris Asli', 'Duplikat dari baris'].concat(H), st.res.duplikat.map(d => [d.excelRow, d.dupOf].concat(d.row))), 'Duplikat');
+  XLSX.writeFile(wb, `${baseName()}_tanpa_duplikat.xlsx`, { compression:true });
+  toast('File Excel diunduh');
+});
+$('#dlCsv').addEventListener('click', () => {
+  if (!st.res) return;
+  const ws = XLSX.utils.aoa_to_sheet([st.parsed.headers].concat(st.res.bersih.map(d => d.row.map(v => v instanceof Date ? fmtCell(v) : v))));
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob(['﻿' + XLSX.utils.sheet_to_csv(ws)], { type:'text/csv;charset=utf-8' }));
+  a.download = `${baseName()}_tanpa_duplikat.csv`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  toast('File CSV diunduh');
+});
+
+const drop = $('#drop');
+$('#fileInput').addEventListener('change', e => { if (e.target.files[0]) loadFile(e.target.files[0]); e.target.value = ''; });
+['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+drop.addEventListener('drop', e => { const f = [...e.dataTransfer.files].find(f => /\.(xlsx|xlsm|xls|csv)$/i.test(f.name)); if (f) loadFile(f); });
+$('#sheet').addEventListener('change', () => { st.keys = null; parse(); });
+$('#hdrRow').addEventListener('input', () => { st.keys = null; parse(); });
+$('#cols').addEventListener('change', () => { st.tab = 'dup'; run(); });
+$('#selAll').addEventListener('click', () => { document.querySelectorAll('#cols input').forEach(c => c.checked = true); run(); });
+$('#selNone').addEventListener('click', () => { document.querySelectorAll('#cols input').forEach(c => c.checked = false); run(); });
+$('#segKeep').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  $('#segKeep').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  st.keep = b.dataset.v; run();
+});
+['#ignoreCase', '#trimSpace', '#skipBlank'].forEach(s => $(s).addEventListener('input', run));
+$('#yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
