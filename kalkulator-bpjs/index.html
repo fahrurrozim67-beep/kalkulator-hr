@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalkulator BPJS 2026 – Hitung Iuran BPJS Kesehatan & Ketenagakerjaan</title>
+<meta name="description" content="Kalkulator BPJS gratis untuk menghitung iuran BPJS Kesehatan, JHT, JP, JKK, dan JKM tahun 2026. Lihat potongan gaji karyawan dan beban perusahaan, lengkap dengan batas upah terbaru.">
+<meta name="keywords" content="kalkulator bpjs, hitung bpjs, iuran bpjs ketenagakerjaan, iuran bpjs kesehatan, potongan bpjs gaji, JHT, JP, JKK, JKM, batas upah jaminan pensiun 2026">
+<!-- Ganti alamat ini jika nanti pakai domain sendiri -->
+<link rel="canonical" href="https://fahrurrozim67-beep.github.io/kalkulator-hr/kalkulator-bpjs/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fahrurrozim67-beep.github.io/kalkulator-hr/kalkulator-bpjs/">
+<meta property="og:title" content="Kalkulator BPJS 2026 – Kesehatan & Ketenagakerjaan">
+<meta property="og:description" content="Hitung potongan BPJS karyawan dan beban perusahaan dengan tarif dan batas upah terbaru 2026. Gratis, tanpa daftar.">
+<meta name="theme-color" content="#0f6e56">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ===== TEMPAT KODE GOOGLE ADSENSE (tempel di sini setelah disetujui) ===== -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Kalkulator BPJS",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "id",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IDR" },
+      "description": "Kalkulator iuran BPJS Kesehatan dan BPJS Ketenagakerjaan (JHT, JP, JKK, JKM) tahun 2026."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Berapa potongan BPJS dari gaji karyawan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Karyawan membayar 1% untuk BPJS Kesehatan, 2% untuk JHT, dan 1% untuk Jaminan Pensiun, sehingga totalnya 4% dari upah, dengan memperhatikan batas upah masing-masing program." } },
+        { "@type": "Question", "name": "Berapa batas upah iuran Jaminan Pensiun 2026?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sejak Maret 2026, batas upah tertinggi untuk perhitungan iuran Jaminan Pensiun adalah Rp11.086.300 per bulan." } },
+        { "@type": "Question", "name": "Berapa batas upah iuran BPJS Kesehatan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Batas atas upah untuk perhitungan iuran BPJS Kesehatan pekerja penerima upah adalah Rp12.000.000 per bulan, dan batas bawahnya adalah upah minimum kabupaten/kota." } },
+        { "@type": "Question", "name": "Apakah JKP memotong gaji karyawan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Tidak. Iuran JKP sebesar 0,36% berasal dari subsidi pemerintah 0,22% dan rekomposisi iuran JKK 0,14%, sehingga tidak ada potongan tambahan bagi karyawan maupun perusahaan." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#f5f4ee; --surface:#ffffff; --ink:#15211d; --muted:#5d6a65; --line:#e3e1d7;
+  --brand:#0f6e56; --brand-ink:#ffffff; --brand-soft:#e6f2ec; --accent:#e8932c; --accent-soft:#fdf1e2;
+  --warn:#b4371f; --warn-soft:#fbe9e4; --radius:16px;
+  --shadow:0 1px 2px rgba(20,33,29,.05),0 8px 24px rgba(20,33,29,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1513; --surface:#17201d; --ink:#e8efec; --muted:#9aa8a2; --line:#27332f;
+    --brand:#3fb68f; --brand-ink:#08130f; --brand-soft:#16302a; --accent:#f0a64a; --accent-soft:#33261a;
+    --warn:#ff8a70; --warn-soft:#3a1f19; --shadow:none;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;font-size:16px}
+a{color:var(--brand)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+header.top{border-bottom:1px solid var(--line);background:var(--surface)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;color:var(--ink);letter-spacing:-.02em}
+.logo-mark{width:30px;height:30px;border-radius:9px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:15px}
+nav.top a{font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;margin-left:18px}
+nav.top a:hover{color:var(--ink)}
+@media(max-width:480px){nav.top a{margin-left:12px;font-size:13px}nav.top a[href="#faq"]{display:none}}
+
+.hero{padding:40px 0 24px}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--brand-soft);color:var(--brand);font-weight:700;font-size:12.5px;padding:5px 11px;border-radius:999px;letter-spacing:.02em}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.15;letter-spacing:-.03em;margin:14px 0 10px;font-weight:800}
+.lead{color:var(--muted);font-size:17px;max-width:640px;margin:0}
+
+.grid{display:grid;grid-template-columns:1fr;gap:20px;padding-bottom:40px}
+@media(min-width:900px){.grid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:start}.sticky{position:sticky;top:16px}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.card + .card{margin-top:20px}
+.step{display:flex;align-items:center;gap:10px;margin:0 0 16px;font-size:17px;font-weight:700;letter-spacing:-.01em}
+.step span{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--surface);display:grid;place-items:center;font-size:13px;flex:none}
+
+label.lbl{display:block;font-size:13.5px;font-weight:600;margin:0 0 6px}
+.lbl .opt{font-weight:500;color:var(--muted)}
+.hint{font-size:12.5px;color:var(--muted);margin-top:5px}
+.field{margin-bottom:16px}
+.field:last-child{margin-bottom:0}
+.money{position:relative}
+.money::before{content:"Rp";position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:600;font-size:15px}
+input[type=text],input[type=number],select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;outline:none;transition:border-color .15s,background .15s}
+.money input{padding-left:42px;font-weight:600}
+input:focus,select:focus{border-color:var(--brand);background:var(--surface)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.row2{grid-template-columns:1fr}}
+
+.progs{display:grid;grid-template-columns:1fr;gap:8px}
+.prog{display:flex;align-items:flex-start;gap:12px;border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;cursor:pointer;background:var(--bg);transition:border-color .15s,background .15s}
+.prog:has(input:checked){border-color:var(--brand);background:var(--brand-soft)}
+.prog input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--brand);flex:none}
+.prog b{display:block;font-size:14.5px}
+.prog small{display:block;color:var(--muted);font-size:12.5px;line-height:1.45}
+.sub{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+
+.btn{font:inherit;font-weight:700;font-size:14.5px;border-radius:11px;padding:11px 16px;cursor:pointer;border:1.5px solid transparent;display:inline-flex;align-items:center;justify-content:center;gap:7px}
+.btn-primary{background:var(--brand);color:var(--brand-ink)}
+.btn-line{background:var(--surface);border-color:var(--line);color:var(--ink)}
+
+.result{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+@media (prefers-color-scheme:dark){.result{background:#0b2a21;border-color:#1d4a3c;color:var(--ink)}}
+.result .k{font-size:13px;opacity:.75;font-weight:600}
+.total{font-size:clamp(30px,6vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin:4px 0 16px;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.stat{background:rgba(255,255,255,.08);border-radius:11px;padding:10px 12px}
+.stat b{display:block;font-size:16px;font-variant-numeric:tabular-nums}
+.stat.wide{grid-column:1/-1}
+.empty{opacity:.75;font-size:14.5px;margin:0 0 12px}
+.bd{border-top:1px solid rgba(255,255,255,.15);padding-top:10px;margin-bottom:12px}
+.bd-row{display:grid;grid-template-columns:minmax(0,1fr) 96px 96px;gap:8px;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08);font-variant-numeric:tabular-nums}
+.bd-row span:not(:first-child){text-align:right}
+.bd-row.head{font-weight:700;opacity:.7;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.bd-row.sum{font-weight:800;font-size:14px;border-bottom:0}
+.bd-row small{display:block;opacity:.7;font-size:11.5px}
+.notes{font-size:12.5px;opacity:.78;margin:0 0 14px;padding-left:18px}
+.notes li{margin-bottom:3px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.result .btn-line{background:transparent;color:inherit;border-color:rgba(255,255,255,.25)}
+.result .btn-primary{background:var(--accent);color:#1f1405}
+.donate{margin-top:14px;background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--radius);padding:16px;font-size:14px}
+.donate a{font-weight:700}
+
+article{padding:8px 0 40px}
+article h2{font-size:clamp(22px,3.5vw,28px);letter-spacing:-.02em;margin:36px 0 10px;line-height:1.25}
+article h3{font-size:18px;margin:24px 0 8px}
+.prose{max-width:760px}
+.table-wrap{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+article table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:480px}
+article th,article td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}
+article th{background:var(--brand);color:var(--brand-ink);font-weight:700}
+article tr:last-child td{border-bottom:0}
+td.x{font-weight:700;color:var(--brand);white-space:nowrap}
+.note{background:var(--accent-soft);border-radius:12px;padding:14px 16px;font-size:14.5px;margin:16px 0}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+summary{font-weight:700;cursor:pointer}
+details p{margin:10px 0 0}
+.related{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:var(--ink);margin-top:24px}
+.related:hover{border-color:var(--brand)}
+.related b{display:block}
+.related small{color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:13.5px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;transition:.25s;pointer-events:none;z-index:9}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media print{
+  header.top,article,footer,.donate,.actions,nav{display:none!important}
+  body{background:#fff}
+  .grid{grid-template-columns:1fr 1fr}
+  .result{background:#fff!important;color:#000!important;border:1px solid #000}
+  .stat{background:#f2f2f2}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../"><span class="logo-mark">⏱</span>Kalkulator HR</a>
+    <nav class="top"><a href="../">Semua Tools</a><a href="#cara-hitung">Cara Hitung</a><a href="#faq">FAQ</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="badge">✓ Tarif & batas upah terbaru · Oktober 2026</span>
+    <h1>Kalkulator BPJS Kesehatan & Ketenagakerjaan</h1>
+    <p class="lead">Hitung potongan BPJS dari gaji karyawan dan iuran yang ditanggung perusahaan, lengkap dengan rincian JHT, JP, JKK, JKM, dan BPJS Kesehatan.</p>
+  </section>
+
+  <div class="grid">
+    <div>
+      <section class="card">
+        <h2 class="step"><span>1</span>Data upah</h2>
+        <div class="row2">
+          <div class="field">
+            <label class="lbl" for="pokok">Gaji pokok</label>
+            <div class="money"><input type="text" inputmode="numeric" id="pokok" placeholder="0" autocomplete="off"></div>
+          </div>
+          <div class="field">
+            <label class="lbl" for="tetap">Tunjangan tetap</label>
+            <div class="money"><input type="text" inputmode="numeric" id="tetap" placeholder="0" autocomplete="off"></div>
+          </div>
+        </div>
+        <div class="hint" style="margin:-6px 0 16px">Dasar iuran BPJS adalah gaji pokok + tunjangan tetap. Tunjangan tidak tetap (uang makan, transport harian, lembur) tidak ikut dihitung.</div>
+        <div class="field">
+          <label class="lbl" for="umk">UMK daerah <span class="opt">(opsional)</span></label>
+          <div class="money"><input type="text" inputmode="numeric" id="umk" placeholder="0" autocomplete="off"></div>
+          <div class="hint">Jika upah di bawah UMK, iuran BPJS Kesehatan dihitung dari UMK sebagai batas bawah.</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="step"><span>2</span>Program yang diikuti</h2>
+        <div class="progs">
+          <label class="prog"><input type="checkbox" data-prog="kes" checked><span><b>BPJS Kesehatan</b><small>4% perusahaan · 1% karyawan · batas upah Rp12.000.000</small></span></label>
+          <label class="prog"><input type="checkbox" data-prog="jht" checked><span><b>Jaminan Hari Tua (JHT)</b><small>3,7% perusahaan · 2% karyawan</small></span></label>
+          <label class="prog"><input type="checkbox" data-prog="jp" checked><span><b>Jaminan Pensiun (JP)</b><small>2% perusahaan · 1% karyawan · batas upah Rp11.086.300</small></span></label>
+          <label class="prog"><input type="checkbox" data-prog="jkk" checked><span><b>Jaminan Kecelakaan Kerja (JKK)</b><small>0,24%–1,74% sesuai tingkat risiko · perusahaan</small></span></label>
+          <label class="prog"><input type="checkbox" data-prog="jkm" checked><span><b>Jaminan Kematian (JKM)</b><small>0,3% · perusahaan</small></span></label>
+        </div>
+        <div class="sub row2">
+          <div class="field">
+            <label class="lbl" for="jkk">Tingkat risiko kerja (JKK)</label>
+            <select id="jkk">
+              <option value="1">Sangat rendah – 0,24%</option>
+              <option value="2">Rendah – 0,54%</option>
+              <option value="3">Sedang – 0,89%</option>
+              <option value="4">Tinggi – 1,27%</option>
+              <option value="5">Sangat tinggi – 1,74%</option>
+            </select>
+            <div class="hint">Kantor/jasa umumnya "sangat rendah". Konstruksi, tambang, dan perkebunan bisa lebih tinggi.</div>
+          </div>
+          <div class="field">
+            <label class="lbl" for="keluarga">Anggota keluarga tambahan</label>
+            <input type="number" id="keluarga" min="0" max="10" step="1" value="0" inputmode="numeric">
+            <div class="hint">Anak ke-4 dan seterusnya, orang tua, atau mertua. Tambahan 1% per orang, dibayar karyawan.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="sticky">
+      <section class="card result" aria-live="polite">
+        <div class="k">Potongan BPJS dari gaji karyawan</div>
+        <div class="total" id="totK">Rp0</div>
+        <div class="stats">
+          <div class="stat"><span class="k">Ditanggung perusahaan</span><b id="totP">Rp0</b></div>
+          <div class="stat"><span class="k">Total setoran iuran</span><b id="totAll">Rp0</b></div>
+          <div class="stat wide"><span class="k">Gaji setelah potongan BPJS</span><b id="net">Rp0</b></div>
+        </div>
+        <div id="bd"></div>
+        <ul class="notes" id="notes"></ul>
+        <div class="actions">
+          <button type="button" class="btn btn-line" id="btnPrint">Cetak</button>
+          <button type="button" class="btn btn-primary" id="btnCopy">Salin hasil</button>
+        </div>
+      </section>
+      <div class="donate">
+        ☕ Kalkulator ini bermanfaat? Dukung pengembangannya lewat <!-- GANTI link di bawah dengan link Saweria/Trakteer kamu --><a href="#" target="_blank" rel="noopener">traktir kopi</a> agar tetap gratis dan terus diperbarui.
+      </div>
+      <!-- ===== SLOT IKLAN SAMPING (AdSense) ===== -->
+    </aside>
+  </div>
+
+  <!-- ===== SLOT IKLAN TENGAH (AdSense) ===== -->
+
+  <article class="prose">
+    <h2 id="cara-hitung">Cara menghitung iuran BPJS</h2>
+    <p>Iuran BPJS dihitung dari <strong>upah bulanan</strong>, yaitu gaji pokok ditambah tunjangan tetap, lalu dikalikan dengan persentase masing-masing program. Sebagian iuran ditanggung perusahaan dan sebagian dipotong dari gaji karyawan. Beberapa program punya batas upah maksimal, sehingga gaji di atas batas tersebut tetap dihitung sebesar batasnya.</p>
+
+    <h3>Tarif iuran tahun 2026</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Program</th><th>Perusahaan</th><th>Karyawan</th><th>Batas upah</th></tr></thead>
+      <tbody>
+        <tr><td>BPJS Kesehatan</td><td class="x">4%</td><td class="x">1%</td><td>Rp12.000.000</td></tr>
+        <tr><td>Jaminan Hari Tua (JHT)</td><td class="x">3,7%</td><td class="x">2%</td><td>Tidak ada</td></tr>
+        <tr><td>Jaminan Pensiun (JP)</td><td class="x">2%</td><td class="x">1%</td><td>Rp11.086.300</td></tr>
+        <tr><td>Jaminan Kecelakaan Kerja (JKK)</td><td class="x">0,24–1,74%</td><td>–</td><td>Tidak ada</td></tr>
+        <tr><td>Jaminan Kematian (JKM)</td><td class="x">0,3%</td><td>–</td><td>Tidak ada</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Tarif JKK berdasarkan tingkat risiko</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Tingkat risiko</th><th>Tarif</th></tr></thead>
+      <tbody>
+        <tr><td>Sangat rendah</td><td class="x">0,24%</td></tr>
+        <tr><td>Rendah</td><td class="x">0,54%</td></tr>
+        <tr><td>Sedang</td><td class="x">0,89%</td></tr>
+        <tr><td>Tinggi</td><td class="x">1,27%</td></tr>
+        <tr><td>Sangat tinggi</td><td class="x">1,74%</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Contoh perhitungan</h3>
+    <p>Rina menerima gaji pokok plus tunjangan tetap sebesar <strong>Rp6.000.000</strong> dan bekerja di kantor dengan risiko sangat rendah.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Program</th><th>Perusahaan</th><th>Karyawan</th></tr></thead>
+      <tbody>
+        <tr><td>BPJS Kesehatan</td><td>Rp240.000</td><td>Rp60.000</td></tr>
+        <tr><td>JHT</td><td>Rp222.000</td><td>Rp120.000</td></tr>
+        <tr><td>JP</td><td>Rp120.000</td><td>Rp60.000</td></tr>
+        <tr><td>JKK (0,24%)</td><td>Rp14.400</td><td>–</td></tr>
+        <tr><td>JKM</td><td>Rp18.000</td><td>–</td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>Rp614.400</strong></td><td><strong>Rp240.000</strong></td></tr>
+      </tbody>
+    </table></div>
+    <p>Jadi gaji Rina dipotong <strong>Rp240.000</strong> per bulan untuk BPJS, sedangkan perusahaan menanggung <strong>Rp614.400</strong>.</p>
+
+    <h3>Bagaimana jika gaji di atas batas upah?</h3>
+    <p>Untuk gaji Rp15.000.000, iuran BPJS Kesehatan dihitung dari Rp12.000.000 (karyawan Rp120.000, perusahaan Rp480.000), dan iuran JP dihitung dari Rp11.086.300 (karyawan Rp110.863, perusahaan Rp221.726). JHT, JKK, dan JKM tetap dihitung dari gaji penuh karena tidak memiliki batas upah.</p>
+
+    <div class="note"><strong>Tentang JKP dan diskon JKK:</strong> Iuran Jaminan Kehilangan Pekerjaan (JKP) sebesar 0,36% tidak menambah potongan. Iuran ini berasal dari subsidi pemerintah 0,22% dan rekomposisi iuran JKK 0,14% (PP 6/2025). Diskon 50% iuran JKK untuk industri padat karya tertentu berlaku hingga Januari 2026, sehingga kalkulator ini memakai tarif normal.</div>
+
+    <h2 id="faq">Pertanyaan yang sering diajukan</h2>
+    <details><summary>Berapa total potongan BPJS dari gaji karyawan?</summary><p>Jika ikut semua program, karyawan membayar 4% dari upah: 1% BPJS Kesehatan, 2% JHT, dan 1% JP. Untuk gaji di atas batas upah BPJS Kesehatan atau JP, potongannya dihitung dari batas upah tersebut.</p></details>
+    <details><summary>Apakah tunjangan tidak tetap ikut dihitung?</summary><p>Tidak. Dasar perhitungan iuran adalah gaji pokok dan tunjangan tetap. Tunjangan yang dibayar berdasarkan kehadiran atau kinerja, seperti uang makan harian, transport harian, dan upah lembur, tidak termasuk.</p></details>
+    <details><summary>Kapan batas upah Jaminan Pensiun berubah?</summary><p>Batas upah JP disesuaikan setiap tahun mengikuti pertumbuhan ekonomi. Sejak Maret 2026, batasnya Rp11.086.300 per bulan berdasarkan surat BPJS Ketenagakerjaan No. B/1226/022026.</p></details>
+    <details><summary>Apakah semua perusahaan wajib ikut Jaminan Pensiun?</summary><p>Jaminan Pensiun wajib bagi pemberi kerja usaha menengah dan besar. Usaha mikro dan kecil dapat mengikuti program sesuai tahapan kepesertaan. Kamu bisa menonaktifkan program yang tidak diikuti di kalkulator.</p></details>
+    <details><summary>Siapa saja yang ditanggung BPJS Kesehatan dari iuran karyawan?</summary><p>Iuran 5% menanggung peserta, suami/istri, dan maksimal 3 anak. Anak ke-4 dan seterusnya, orang tua, serta mertua dapat ditambahkan dengan iuran tambahan 1% per orang yang dibayar oleh karyawan.</p></details>
+    <details><summary>Apakah hasil kalkulator ini pasti sama dengan tagihan BPJS?</summary><p>Hasilnya adalah simulasi berdasarkan tarif umum. Tagihan sebenarnya bisa berbeda karena pembulatan, kelas risiko JKK yang ditetapkan untuk perusahaan, atau kebijakan khusus. Gunakan tagihan resmi BPJS sebagai acuan akhir.</p></details>
+
+    <a class="related" href="../kalkulator-lembur/"><span style="font-size:24px">⏱</span><span><b>Kalkulator Lembur</b><small>Hitung upah lembur hari kerja & hari libur sesuai PP 35/2021 →</small></span></a>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> Kalkulator HR · Alat bantu hitung gratis untuk HR, admin, dan karyawan Indonesia.<br>
+    Dasar: Perpres 64/2020 & 63/2022 (BPJS Kesehatan), PP 44/2015, 45/2015, 46/2015, PP 6/2025, dan Surat BPJS Ketenagakerjaan No. B/1226/022026. Hasil bersifat simulasi.
+  </div>
+</footer>
+
+<div class="toast" id="toast">Hasil disalin</div>
+
+<script>
+// ===CALC-START===
+/* Tarif iuran BPJS 2026 */
+const TARIF = {
+  kes: { p:0.04,  k:0.01, batas:12000000 },
+  jht: { p:0.037, k:0.02 },
+  jp:  { p:0.02,  k:0.01, batas:11086300 },
+  jkm: { p:0.003 },
+  jkk: { '1':0.0024, '2':0.0054, '3':0.0089, '4':0.0127, '5':0.0174 }
+};
+function hitungBPJS(o){
+  const upah = Math.max(0, o.upah || 0);
+  const ikut = o.ikut, rows = [];
+  if (ikut.kes){
+    const dasar = Math.min(Math.max(upah, o.umk || 0), TARIF.kes.batas);
+    rows.push({ kode:'kes', nama:'BPJS Kesehatan', dasar, p:dasar * TARIF.kes.p, k:dasar * TARIF.kes.k });
+    const n = Math.max(0, Math.floor(o.keluarga || 0));
+    if (n > 0) rows.push({ kode:'kel', nama:`Keluarga tambahan (${n} orang)`, dasar, p:0, k:dasar * 0.01 * n });
+  }
+  if (ikut.jht) rows.push({ kode:'jht', nama:'JHT', dasar:upah, p:upah * TARIF.jht.p, k:upah * TARIF.jht.k });
+  if (ikut.jp){
+    const dasar = Math.min(upah, TARIF.jp.batas);
+    rows.push({ kode:'jp', nama:'Jaminan Pensiun', dasar, p:dasar * TARIF.jp.p, k:dasar * TARIF.jp.k });
+  }
+  if (ikut.jkk){
+    const t = TARIF.jkk[o.kelasJkk] || TARIF.jkk['1'];
+    rows.push({ kode:'jkk', nama:'JKK', dasar:upah, p:upah * t, k:0, tarif:t });
+  }
+  if (ikut.jkm) rows.push({ kode:'jkm', nama:'JKM', dasar:upah, p:upah * TARIF.jkm.p, k:0 });
+  const totP = rows.reduce((s, r) => s + r.p, 0), totK = rows.reduce((s, r) => s + r.k, 0);
+  return { rows, totP, totK, total:totP + totK, net:upah - totK,
+           capKes: ikut.kes && upah > TARIF.kes.batas, capJp: ikut.jp && upah > TARIF.jp.batas,
+           floorKes: ikut.kes && (o.umk || 0) > upah };
+}
+// ===CALC-END===
+
+const $ = s => document.querySelector(s);
+const rp = n => 'Rp' + Math.round(n).toLocaleString('id-ID');
+const parseRp = s => Number(String(s).replace(/\D/g, '')) || 0;
+const pct = x => (x * 100).toLocaleString('id-ID', { maximumFractionDigits:2 }) + '%';
+
+document.querySelectorAll('.money input').forEach(inp => {
+  inp.addEventListener('input', () => {
+    const v = parseRp(inp.value);
+    inp.value = v ? v.toLocaleString('id-ID') : '';
+    calc();
+  });
+});
+document.querySelectorAll('[data-prog], #jkk, #keluarga').forEach(el => el.addEventListener('input', calc));
+
+let lastSummary = '';
+function calc(){
+  const ikut = {};
+  document.querySelectorAll('[data-prog]').forEach(c => ikut[c.dataset.prog] = c.checked);
+  const upah = parseRp($('#pokok').value) + parseRp($('#tetap').value);
+  const o = { upah, umk:parseRp($('#umk').value), kelasJkk:$('#jkk').value, keluarga:parseInt($('#keluarga').value, 10) || 0, ikut };
+  const h = hitungBPJS(o);
+
+  $('#totK').textContent = rp(h.totK);
+  $('#totP').textContent = rp(h.totP);
+  $('#totAll').textContent = rp(h.total);
+  $('#net').textContent = rp(h.net);
+
+  if (!upah){
+    $('#bd').innerHTML = '<p class="empty">Masukkan gaji pokok untuk mulai menghitung.</p>';
+    $('#notes').innerHTML = '';
+    lastSummary = '';
+    return;
+  }
+  if (!h.rows.length){
+    $('#bd').innerHTML = '<p class="empty">Pilih minimal satu program BPJS.</p>';
+    $('#notes').innerHTML = '';
+    return;
+  }
+
+  $('#bd').innerHTML = '<div class="bd">' +
+    '<div class="bd-row head"><span>Program</span><span>Perusahaan</span><span>Karyawan</span></div>' +
+    h.rows.map(r => `<div class="bd-row"><span>${r.nama}${r.tarif ? ` <small>tarif ${pct(r.tarif)}</small>` : ''}${r.dasar !== upah ? `<small>dasar ${rp(r.dasar)}</small>` : ''}</span><span>${r.p ? rp(r.p) : '–'}</span><span>${r.k ? rp(r.k) : '–'}</span></div>`).join('') +
+    `<div class="bd-row sum"><span>Total</span><span>${rp(h.totP)}</span><span>${rp(h.totK)}</span></div></div>`;
+
+  const notes = [];
+  if (h.capKes) notes.push('Upah melebihi batas BPJS Kesehatan, iuran dihitung dari Rp12.000.000.');
+  if (h.floorKes) notes.push('Upah di bawah UMK, iuran BPJS Kesehatan dihitung dari UMK.');
+  if (h.capJp) notes.push('Upah melebihi batas Jaminan Pensiun, iuran dihitung dari Rp11.086.300.');
+  notes.push('JKP tidak menambah potongan (ditanggung pemerintah dan rekomposisi JKK).');
+  $('#notes').innerHTML = notes.map(n => `<li>${n}</li>`).join('');
+
+  lastSummary = ['HASIL PERHITUNGAN IURAN BPJS 2026',
+    `Upah (gaji pokok + tunjangan tetap): ${rp(upah)}`, '',
+    ...h.rows.map(r => `${r.nama}: perusahaan ${rp(r.p)}, karyawan ${rp(r.k)}`), '',
+    `Potongan gaji karyawan: ${rp(h.totK)}`,
+    `Ditanggung perusahaan: ${rp(h.totP)}`,
+    `Total setoran iuran: ${rp(h.total)}`,
+    `Gaji setelah potongan BPJS: ${rp(h.net)}`].join('\n');
+}
+
+$('#btnCopy').addEventListener('click', async () => {
+  if (!lastSummary) return toast('Isi data upah dulu');
+  try { await navigator.clipboard.writeText(lastSummary); toast('Hasil disalin'); }
+  catch(e){ toast('Gagal menyalin'); }
+});
+$('#btnPrint').addEventListener('click', () => window.print());
+function toast(t){ const el = $('#toast'); el.textContent = t; el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 1800); }
+
+$('#yr').textContent = new Date().getFullYear();
+calc();
+</script>
+</body>
+</html>
