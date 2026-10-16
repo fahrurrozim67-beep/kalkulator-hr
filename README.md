@@ -28,7 +28,7 @@ Setiap tool berada di foldernya sendiri dengan file `index.html`, sehingga URL-n
 
 Cari kata `GANTI` di setiap file:
 
-1. `domainkamu.com` → domain website.
+1. Alamat `fahrurrozim67-beep.github.io/kalkulator-hr` (canonical, og:url, `sitemap.xml`) → domain sendiri, jika nanti pindah domain.
 2. Link "traktir kopi" → link Saweria/Trakteer.
 3. Slot `SLOT IKLAN` / `TEMPAT KODE GOOGLE ADSENSE` → kode AdSense setelah disetujui.
 
