@@ -31,7 +31,7 @@ Kumpulan tools hitung HR gratis untuk HR, admin, payroll, dan karyawan Indonesia
 │   └── index.html              # Gabung banyak file Excel/CSV
 ├── penghapus-duplikat/
 │   └── index.html              # Hapus baris duplikat
-├── assets/theme.css            # Tema bersama halaman tool (motif slip gaji)
+├── assets/theme.css            # Tema bersama halaman tool (gelap, kartu kaca)
 └── assets/vendor/xlsx-js-style/
     └── xlsx.bundle.js          # Library baca/tulis Excel (Apache 2.0)
 ```
