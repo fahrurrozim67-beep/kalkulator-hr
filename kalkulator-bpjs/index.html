@@ -12,14 +12,13 @@
 <meta property="og:title" content="Kalkulator HR – Tools Gratis untuk HR Indonesia">
 <meta property="og:description" content="Hitung gaji bersih, lembur, BPJS, PPh 21, dan pesangon dengan cepat. Gratis, tanpa daftar.">
 <meta name="theme-color" content="#0B0D17">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Unbounded:wght@600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
-<!-- ===== TEMPAT KODE GOOGLE ADSENSE (tempel di sini setelah disetujui) ===== -->
-
 <style>
-/* Tema gelap: latar tinta, kartu kaca, aksen biru-pink-emas (emas = uang yang masuk rekening) */
 :root{
   color-scheme:dark;
   --bg:#0B0D17; --surface:#141828; --glass:rgba(255,255,255,.045); --glass-hi:rgba(255,255,255,.08);
@@ -31,23 +30,15 @@
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;font-size:16px;position:relative;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:
-    radial-gradient(520px 420px at 82% 8%,rgba(124,140,255,.30),transparent 70%),
-    radial-gradient(460px 380px at 8% 38%,rgba(255,111,174,.16),transparent 70%),
-    radial-gradient(520px 420px at 70% 92%,rgba(255,201,74,.10),transparent 70%)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(520px 420px at 82% 8%,rgba(124,140,255,.30),transparent 70%),radial-gradient(460px 380px at 8% 38%,rgba(255,111,174,.16),transparent 70%),radial-gradient(520px 420px at 70% 92%,rgba(255,201,74,.10),transparent 70%)}
 a{color:var(--brand)}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-
-/* Header */
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;text-decoration:none;color:var(--ink);font-size:15px;letter-spacing:-.01em}
 .logo-mark{width:34px;height:34px;border-radius:11px;display:block;object-fit:cover;flex:none}
 nav.top a{font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--glass)}
 nav.top a:hover{border-color:var(--line-hi)}
-
-/* Hero */
 .hero{display:grid;grid-template-columns:1fr;gap:40px;padding:24px 0 64px;align-items:center}
 @media(min-width:920px){.hero{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;padding:48px 0 88px}}
 .chip{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--ink);padding:6px 12px 6px 8px;border:1px solid var(--line);border-radius:999px;background:var(--glass)}
@@ -64,13 +55,7 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold),var(--pink)
 .facts{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 0;padding:0;list-style:none;font-size:13.5px;color:var(--muted)}
 .facts li{display:flex;align-items:center;gap:7px;padding:5px 12px 5px 9px;border-radius:999px;background:var(--glass)}
 .facts svg{color:var(--mint);flex:none}
-
-/* Kartu gaji (kaca) */
-.wallet{position:relative;max-width:470px;width:100%;justify-self:center;border-radius:26px;padding:24px;
-  background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid var(--line-hi);
-  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
-  box-shadow:0 40px 80px -40px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.12);
-  animation:rise .7s cubic-bezier(.2,.7,.2,1) .1s both}
+.wallet{position:relative;max-width:470px;width:100%;justify-self:center;border-radius:26px;padding:24px;background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid var(--line-hi);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:0 40px 80px -40px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.12);animation:rise .7s cubic-bezier(.2,.7,.2,1) .1s both}
 @keyframes rise{from{opacity:.0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.wallet{animation:none}}
 .w-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}
@@ -79,94 +64,32 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold),var(--pink)
 .w-total{font-family:var(--mono);font-weight:700;font-size:clamp(30px,6.4vw,42px);letter-spacing:-.03em;line-height:1.05;color:var(--gold);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 .w-sub{font-size:13px;color:var(--muted);margin:6px 0 16px}
 .bar{display:flex;height:10px;border-radius:999px;overflow:hidden;background:var(--glass-hi);gap:2px}
-.bar i{display:block;height:100%;transition:width .3s}
-.bar .b-thp{background:var(--gold)}.bar .b-bpjs{background:var(--brand)}.bar .b-pph{background:var(--pink)}
-.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--muted);margin:8px 0 20px}
-.legend span{display:flex;align-items:center;gap:6px}
-.legend i{width:8px;height:8px;border-radius:3px}
-.w-inputs{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;margin-bottom:14px}
-.wallet label{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin-bottom:5px}
-.wallet input,.wallet select{width:100%;font-family:var(--mono);font-size:16px;font-weight:700;color:var(--ink);background:rgba(0,0,0,.28);border:1px solid var(--line-hi);border-radius:12px;padding:12px 14px;outline:none}
-.wallet select option{background:var(--surface)}
-.wallet input:focus,.wallet select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(255,201,74,.18)}
-.money{position:relative}
-.money::before{content:"Rp";position:absolute;left:12px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-weight:700;color:var(--muted);font-size:14px}
-.money input{padding-left:40px}
-.lines{font-size:14.5px}
-.line{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}
-.line > span:first-child{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.line .dot{width:8px;height:8px;border-radius:3px;flex:none}
-.line a{color:inherit;text-decoration:underline;text-decoration-color:var(--line-hi);text-underline-offset:3px}
-.line a:hover{text-decoration-color:var(--ink)}
-.line small{color:var(--muted);font-size:12px;font-family:var(--mono)}
-.line .v{white-space:nowrap;font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums}
-.line.minus .v{color:var(--minus)}
-.line.extra{color:var(--muted);border-bottom:0;font-size:13.5px;padding-top:12px}
-.line.extra a{color:var(--gold);text-decoration-color:rgba(255,201,74,.4)}
-.w-note{font-size:12px;color:var(--muted);margin:12px 0 0;line-height:1.5}
-@media(max-width:420px){.wallet{padding:20px 18px}.w-inputs{grid-template-columns:1fr}.lines{font-size:14px}}
-
-/* Daftar alat */
-.section-h{font-family:var(--display);font-size:clamp(22px,3.2vw,32px);letter-spacing:-.03em;line-height:1.15;margin:0 0 10px;font-weight:700;text-wrap:balance}
-.section-p{color:var(--muted);margin:0 0 28px;max-width:60ch}
-.index{padding:8px 0 72px}
-.group + .group{margin-top:36px}
-.group h3{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.group h3 small{color:var(--muted);font-weight:500;font-size:13px;letter-spacing:0;text-transform:none}
-.tools{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:12px}
-@media(min-width:640px){.tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.tool{height:100%;display:grid;grid-template-columns:48px minmax(0,1fr);gap:4px 16px;padding:20px;border-radius:20px;text-decoration:none;color:var(--ink);
-  background:var(--glass);border:1px solid var(--line);transition:transform .18s,border-color .18s,background .18s}
-.tool:hover{transform:translateY(-3px);border-color:var(--line-hi);background:var(--glass-hi)}
-.ico{grid-row:1/4;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--c)}
-.tool b{font-size:17px;letter-spacing:-.01em;display:flex;justify-content:space-between;gap:10px}
-.tool b svg{color:var(--muted);flex:none;transition:transform .18s,color .18s}
-.tool:hover b svg{transform:translateX(3px);color:var(--ink)}
-.tool .d{color:var(--muted);font-size:14.5px;line-height:1.5}
-.tool .tag{justify-self:start;margin-top:8px;font-family:var(--mono);font-size:11.5px;font-weight:700;color:var(--c);border:1px solid color-mix(in srgb,var(--c) 40%,transparent);padding:3px 9px;border-radius:999px}
-
-/* Jaminan */
-.assure{display:grid;grid-template-columns:1fr;gap:12px;padding:0 0 72px}
-@media(min-width:760px){.assure{grid-template-columns:repeat(3,1fr)}}
-.assure div{padding:20px;border-radius:20px;border:1px dashed var(--line-hi)}
-.assure h3{font-size:16px;margin:0 0 6px}
-.assure p{margin:0;color:var(--muted);font-size:14.5px}
-
-.donate{background:rgba(255,201,74,.10);border:1px solid rgba(255,201,74,.3);color:var(--ink);border-radius:16px;padding:16px 18px;font-size:15px;margin-bottom:48px}
-.donate a{font-weight:700;color:var(--gold)}
-footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:13.5px}
+.bar i{display:block;height:100%;transition:width .3s}.bar .b-thp{background:var(--gold)}.bar .b-bpjs{background:var(--brand)}.bar .b-pph{background:var(--pink)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--muted);margin:8px 0 20px}.legend span{display:flex;align-items:center;gap:6px}.legend i{width:8px;height:8px;border-radius:3px}.w-inputs{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;margin-bottom:14px}.wallet label{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin-bottom:5px}.wallet input,.wallet select{width:100%;font-family:var(--mono);font-size:16px;font-weight:700;color:var(--ink);background:rgba(0,0,0,.28);border:1px solid var(--line-hi);border-radius:12px;padding:12px 14px;outline:none}.wallet select option{background:var(--surface)}.wallet input:focus,.wallet select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(255,201,74,.18)}.money{position:relative}.money::before{content:"Rp";position:absolute;left:12px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-weight:700;color:var(--muted);font-size:14px}.money input{padding-left:40px}.lines{font-size:14.5px}.line{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}.line > span:first-child{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.line .dot{width:8px;height:8px;border-radius:3px;flex:none}.line a{color:inherit;text-decoration:underline;text-decoration-color:var(--line-hi);text-underline-offset:3px}.line a:hover{text-decoration-color:var(--ink)}.line small{color:var(--muted);font-size:12px;font-family:var(--mono)}.line .v{white-space:nowrap;font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums}.line.minus .v{color:var(--minus)}.line.extra{color:var(--muted);border-bottom:0;font-size:13.5px;padding-top:12px}.line.extra a{color:var(--gold);text-decoration-color:rgba(255,201,74,.4)}.w-note{font-size:12px;color:var(--muted);margin:12px 0 0;line-height:1.5}@media(max-width:420px){.wallet{padding:20px 18px}.w-inputs{grid-template-columns:1fr}.lines{font-size:14px}}
+.section-h{font-family:var(--display);font-size:clamp(22px,3.2vw,32px);letter-spacing:-.03em;line-height:1.15;margin:0 0 10px;font-weight:700;text-wrap:balance}.section-p{color:var(--muted);margin:0 0 28px;max-width:60ch}.index{padding:8px 0 72px}.group + .group{margin-top:36px}.group h3{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.group h3 small{color:var(--muted);font-weight:500;font-size:13px;letter-spacing:0;text-transform:none}.tools{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:12px}@media(min-width:640px){.tools{grid-template-columns:repeat(2,minmax(0,1fr))}}.tool{height:100%;display:grid;grid-template-columns:48px minmax(0,1fr);gap:4px 16px;padding:20px;border-radius:20px;text-decoration:none;color:var(--ink);background:var(--glass);border:1px solid var(--line);transition:transform .18s,border-color .18s,background .18s}.tool:hover{transform:translateY(-3px);border-color:var(--line-hi);background:var(--glass-hi)}.ico{grid-row:1/4;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--c)}.tool b{font-size:17px;letter-spacing:-.01em;display:flex;justify-content:space-between;gap:10px}.tool b svg{color:var(--muted);flex:none;transition:transform .18s,color .18s}.tool:hover b svg{transform:translateX(3px);color:var(--ink)}.tool .d{color:var(--muted);font-size:14.5px;line-height:1.5}.tool .tag{justify-self:start;margin-top:8px;font-family:var(--mono);font-size:11.5px;font-weight:700;color:var(--c);border:1px solid color-mix(in srgb,var(--c) 40%,transparent);padding:3px 9px;border-radius:999px}.assure{display:grid;grid-template-columns:1fr;gap:12px;padding:0 0 72px}@media(min-width:760px){.assure{grid-template-columns:repeat(3,1fr)}}.assure div{padding:20px;border-radius:20px;border:1px dashed var(--line-hi)}.assure h3{font-size:16px;margin:0 0 6px}.assure p{margin:0;color:var(--muted);font-size:14.5px}.donate{background:rgba(255,201,74,.10);border:1px solid rgba(255,201,74,.3);color:var(--ink);border-radius:16px;padding:16px 18px;font-size:15px;margin-bottom:48px}.donate a{font-weight:700;color:var(--gold)}footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:13.5px}
 </style>
-  <script data-goatcounter="https://kalkulator-hr.goatcounter.com/count" async src="assets/count.js"></script>
+<script data-goatcounter="https://kalkulator-hr.goatcounter.com/count" async src="assets/count.js"></script>
 </head>
 <body>
-
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="./" aria-label="Kalkulator HR, beranda">
-      <img class="logo-mark" src="assets/logo-kalkulator-hr.svg" alt="Kalkulator HR logo">
-      <span>Kalkulator HR</span>
-    </a>
+    <a class="logo" href="./" aria-label="Kalkulator HR, beranda"><span class="logo-mark">Rp</span>Kalkulator HR</a>
     <nav class="top"><a href="#alat">Semua alat</a></nav>
   </div>
 </header>
-
 <main class="wrap">
   <section class="hero">
     <div>
       <span class="chip"><i></i>Tarif & batas upah 2026 sudah masuk</span>
       <h1>Cek gaji bersihmu <em>sebelum gajian.</em></h1>
       <p class="lead">Lembur, BPJS, PPh 21, sampai pesangon. Hitung sendiri dalam hitungan detik sesuai aturan terbaru. Datamu tetap di HP-mu, tidak dikirim ke mana pun.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="#alat">Lihat semua alat</a>
-        <a class="btn btn-line" href="kalkulator-lembur/">Hitung lembur</a>
-      </div>
+      <div class="cta"><a class="btn btn-primary" href="#alat">Lihat semua alat</a><a class="btn btn-line" href="kalkulator-lembur/">Hitung lembur</a></div>
       <ul class="facts">
         <li><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Rumus terupdate</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Tanpa daftar</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Privasi aman</li>
       </ul>
     </div>
-
     <section class="wallet" aria-label="Simulasi gaji bersih">
       <div class="w-head"><b>Gaji bersih</b><span>simulasi per bulan</span></div>
       <div class="w-total" id="vThp" aria-live="polite"></div>
@@ -196,11 +119,9 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
       <p class="w-note">Perkiraan Januari–November untuk karyawan tetap dengan risiko kerja sangat rendah. Klik nama potongan untuk rincian lengkapnya.</p>
     </section>
   </section>
-
   <section class="index" id="alat">
     <h2 class="section-h">Pilih alat yang kamu butuhkan</h2>
     <p class="section-p">Empat kalkulator untuk hak karyawan dan dua alat untuk merapikan data Excel. Semuanya gratis dan bisa langsung dipakai.</p>
-
     <div class="group" id="hak">
       <h3>Gaji & hak karyawan<small>Mengacu pada peraturan yang berlaku</small></h3>
       <ul class="tools">
@@ -210,7 +131,6 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
         <li><a class="tool" href="kalkulator-pesangon/" style="--c:var(--mint)"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M7 15V9m5 6V5m5 10v-7"/></svg></span><span><b>Pesangon <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M8 3l5 5-5 5"/></svg></b><span class="d">Estimasi pesangon untuk masa kerja tertentu.</span><span class="tag">HR</span></span></a></li>
       </ul>
     </div>
-
     <div class="group" id="excel">
       <h3>Data Excel<small>Diproses di browser, file tidak diupload</small></h3>
       <ul class="tools">
@@ -219,247 +139,24 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
       </ul>
     </div>
   </section>
-
   <section class="assure" aria-label="Kenapa memakai Kalkulator HR">
     <div><h3>Data tetap di perangkatmu</h3><p>Semua perhitungan dan pengolahan file berjalan di browser. Tidak ada data yang dikirim ke server.</p></div>
     <div><h3>Mengacu pada regulasi</h3><p>Rumus mengikuti PP 35/2021, PP 58/2023, dan batas upah BPJS terbaru, lalu diperbarui jika aturannya berubah.</p></div>
     <div><h3>Rincian yang bisa dicek</h3><p>Setiap hasil menampilkan langkah hitungnya, jadi kamu bisa mencocokkan dengan slip gaji atau laporan sendiri.</p></div>
   </section>
-
-  <!-- Kotak donasi disembunyikan: hapus atribut "hidden" setelah link Saweria/Trakteer siap -->
-  <div class="donate" hidden>
-    ☕ Tools ini bermanfaat? Dukung pengembangannya lewat <!-- GANTI link di bawah dengan link Saweria/Trakteer kamu --><a href="#" target="_blank" rel="noopener">traktir kopi</a> agar semua tools tetap gratis.
-  </div>
+  <div class="donate" hidden>☕ Tools ini bermanfaat? Dukung pengembangannya lewat <a href="#" target="_blank" rel="noopener">traktir kopi</a> agar semua tools tetap gratis.</div>
 </main>
-
 <footer>
   <div class="wrap">© <span id="yr"></span> Kalkulator HR. Hasil perhitungan bersifat simulasi dan bukan nasihat hukum atau pajak.</div>
 </footer>
-
 <script>
-/* Simulasi slip gaji: BPJS 2026 & PPh 21 TER (PP 58/2023) */
-const TER = {
-  A: [[5400000,0],[5650000,.0025],[5950000,.005],[6300000,.0075],[6750000,.01],[7500000,.0125],[8550000,.015],[9650000,.0175],[10050000,.02],[10350000,.0225],[10700000,.025],[11050000,.03],[11600000,.0325],[12200000,.035],[12950000,.04],[13900000,.05],[14750000,.06],[16150000,.07],[17800000,.08],[19850000,.09],[22000000,.1],[26000000,.12],[34000000,.14],[50000000,.17]],
-  B: [[6200000,0],[6500000,.0025],[6850000,.005],[7300000,.0075],[9200000,.01],[10750000,.015],[11250000,.02],[11600000,.025],[12600000,.03],[13600000,.04],[14950000,.05],[16400000,.06],[18450000,.07],[20400000,.08],[22250000,.09],[24800000,.1],[29000000,.12],[36000000,.14],[50000000,.17]],
-  C: [[6600000,0],[6950000,.0025],[7350000,.005],[7800000,.0075],[8850000,.01],[9800000,.0125],[10950000,.015],[11200000,.0175],[12050000,.02],[12950000,.03],[14150000,.04],[15550000,.05],[17050000,.06],[18650000,.07],[20350000,.08],[22450000,.09],[25550000,.1],[31000000,.12],[40000000,.14],[50000000,.17]],
-};
-const KAT = { 'TK/0':'A', 'TK/1':'A', 'K/0':'A', 'TK/2':'B', 'TK/3':'B', 'K/1':'B', 'K/2':'B', 'K/3':'C' };
-const tarifTER = (k, b) => { for (const [atas, t] of TER[k]) if (b <= atas) return t; return .34; };
-function hitungSlip(g, status){
-  const kes = Math.min(g, 12e6) * .01, jht = g * .02, jp = Math.min(g, 11086300) * .01;
-  const bruto = g + Math.min(g, 12e6) * .04 + g * .0024 + g * .003;   // premi BPJS Kesehatan, JKK, JKM dari perusahaan
-  const kat = KAT[status], t = tarifTER(kat, bruto), pph = Math.floor(bruto * t);
-  return { kes, jht, jp, pph, kat, t, thp:g - kes - jht - jp - pph };
-}
-const $ = s => document.querySelector(s);
-const rp = n => 'Rp' + Math.round(n).toLocaleString('id-ID');
-const pct = x => (x * 100).toLocaleString('id-ID', { maximumFractionDigits:2 }) + '%';
-function render(){
-  const g = Number($('#gaji').value.replace(/\D/g, '')) || 0;
-  const h = hitungSlip(g, $('#status').value);
-  $('#vGaji').textContent = rp(g);
-  $('#vKes').textContent = '−' + rp(h.kes);
-  $('#vJht').textContent = '−' + rp(h.jht);
-  $('#vJp').textContent = '−' + rp(h.jp);
-  $('#vPph').textContent = '−' + rp(h.pph);
-  $('#vTer').textContent = `TER ${h.kat} ${pct(h.t)}`;
-  $('#vThp').textContent = rp(h.thp);
-  const w = n => g ? (n / g * 100) + '%' : '0%';
-  $('#bThp').style.width = g ? w(h.thp) : '100%';
-  $('#bBpjs').style.width = w(h.kes + h.jht + h.jp);
-  $('#bPph').style.width = w(h.pph);
-}
-$('#gaji').addEventListener('input', e => { const v = Number(e.target.value.replace(/\D/g, '')) || 0; e.target.value = v ? v.toLocaleString('id-ID') : ''; render(); });
-$('#status').addEventListener('change', render);
-$('#yr').textContent = new Date().getFullYear();
-render();
+const TER = {A:[[5400000,0],[5650000,.0025],[5950000,.005],[6300000,.0075],[6750000,.01],[7500000,.0125],[8550000,.015],[9650000,.0175],[10050000,.02],[10350000,.0225],[10700000,.025],[11050000,.03],[11600000,.0325],[12200000,.035],[12950000,.04],[13900000,.05],[14750000,.06],[16150000,.07],[17800000,.08],[19850000,.09],[22000000,.1],[26000000,.12],[34000000,.14],[50000000,.17]],B:[[6200000,0],[6500000,.0025],[6850000,.005],[7300000,.0075],[9200000,.01],[10750000,.015],[11250000,.02],[11600000,.025],[12600000,.03],[13600000,.04],[14950000,.05],[16400000,.06],[18450000,.07],[20400000,.08],[22250000,.09],[24800000,.1],[29000000,.12],[36000000,.14],[50000000,.17]],C:[[6600000,0],[6950000,.0025],[7350000,.005],[7800000,.0075],[8850000,.01],[9800000,.0125],[10950000,.015],[11200000,.0175],[12050000,.02],[12950000,.03],[14150000,.04],[15550000,.05],[17050000,.06],[18650000,.07],[20350000,.08],[22450000,.09],[25550000,.1],[31000000,.12],[40000000,.14],[50000000,.17]]};
+const KAT = {'TK/0':'A','TK/1':'A','K/0':'A','TK/2':'B','TK/3':'B','K/1':'B','K/2':'B','K/3':'C'};
+const tarifTER = (k,b)=>{for(const [atas,t] of TER[k]) if(b<=atas) return t; return .34};
+function hitungSlip(g,status){const kes=Math.min(g,12e6)*.01,jht=g*.02,jp=Math.min(g,11086300)*.01;const bruto=g+Math.min(g,12e6)*.04+g*.0024+g*.003;const kat=KAT[status],t=tarifTER(kat,bruto),pph=Math.floor(bruto*t);return {kes,jht,jp,pph,kat,t,thp:g-kes-jht-jp-pph};}
+const $=s=>document.querySelector(s);const rp=n=>'Rp'+Math.round(n).toLocaleString('id-ID');const pct=x=>(x*100).toLocaleString('id-ID',{maximumFractionDigits:2})+'%';
+function render(){const g=Number($('#gaji').value.replace(/\D/g,''))||0;const h=hitungSlip(g,$('#status').value);$('#vGaji').textContent=rp(g);$('#vKes').textContent='−'+rp(h.kes);$('#vJht').textContent='−'+rp(h.jht);$('#vJp').textContent='−'+rp(h.jp);$('#vPph').textContent='−'+rp(h.pph);$('#vTer').textContent=`TER ${h.kat} ${pct(h.t)}`;$('#vThp').textContent=rp(h.thp);const w=n=>g?(n/g*100)+'%':'0%';$('#bThp').style.width=g?w(h.thp):'100%';$('#bBpjs').style.width=w(h.kes+h.jht+h.jp);$('#bPph').style.width=w(h.pph);}
+$('#gaji').addEventListener('input',e=>{const v=Number(e.target.value.replace(/\D/g,''))||0;e.target.value=v?v.toLocaleString('id-ID'):'';render();});$('#status').addEventListener('change',render);$('#yr').textContent=new Date().getFullYear();render();
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
