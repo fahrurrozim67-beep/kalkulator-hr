@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kalkulator Lembur 2026 – Hitung Upah Lembur Sesuai PP 35/2021</title>
-<meta name="description" content="Kalkulator lembur gratis untuk menghitung upah lembur karyawan di hari kerja dan hari libur sesuai PP 35/2021. Mendukung sistem 5 & 6 hari kerja, upah bulanan maupun harian, lengkap dengan rincian per jam.">
+<meta name="description" content="Kalkulator lembur gratis untuk menghitung upah lembur karyawan di hari kerja dan hari libur sesuai PP 35/2021. Mendukung sistem 5 & 6 hari kerja, upah bulanan maupun harian.">
 <meta name="keywords" content="kalkulator lembur, hitung lembur, upah lembur, rumus lembur, lembur hari libur, PP 35 2021, 1/173">
 <!-- Ganti alamat ini jika nanti pakai domain sendiri -->
 <link rel="canonical" href="https://fahrurrozim67-beep.github.io/kalkulator-hr/kalkulator-lembur/">
@@ -18,36 +18,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- ===== TEMPAT KODE GOOGLE ADSENSE (tempel di sini setelah disetujui) ===== -->
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebApplication",
-      "name": "Kalkulator Lembur",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web",
-      "inLanguage": "id",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IDR" },
-      "description": "Kalkulator upah lembur karyawan sesuai PP 35/2021 untuk hari kerja dan hari libur."
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Bagaimana rumus menghitung upah lembur?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Upah sejam = 1/173 x upah sebulan. Upah lembur = upah sejam x jumlah jam lembur x pengali sesuai jenis hari, mengacu Pasal 31-33 PP 35/2021." } },
-        { "@type": "Question", "name": "Berapa batas maksimal jam lembur?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Paling lama 4 jam dalam 1 hari dan 18 jam dalam 1 minggu (Pasal 26 PP 35/2021)." } },
-        { "@type": "Question", "name": "Berapa pengali lembur di hari kerja?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Jam lembur pertama dibayar 1,5 kali upah sejam, dan setiap jam berikutnya 2 kali upah sejam." } },
-        { "@type": "Question", "name": "Apakah UU Pelindungan Ketenagakerjaan 2026 mengubah rumus lembur?",
-          "acceptedAnswer": { "@type": "Answer", "text": "UU Pelindungan Ketenagakerjaan disahkan DPR pada 6 Oktober 2026 dengan masa transisi satu tahun. Selama aturan pelaksana baru belum terbit, perhitungan lembur masih mengacu pada PP 35/2021." } }
-      ]
-    }
-  ]
-}
-</script>
 
 <style>
 :root{
@@ -69,22 +39,19 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sa
 a{color:var(--brand)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
 
-/* Header */
 header.top{border-bottom:1px solid var(--line);background:var(--surface)}
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;color:var(--ink);letter-spacing:-.02em}
-.logo-mark{width:30px;height:30px;border-radius:9px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:15px}
+.logo-mark{width:34px;height:34px;border-radius:11px;display:block;object-fit:cover;flex:none}
 nav.top a{font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;margin-left:18px}
 nav.top a:hover{color:var(--ink)}
 @media(max-width:480px){nav.top a{margin-left:12px;font-size:13px}nav.top a[href="#faq"]{display:none}}
 
-/* Hero */
 .hero{padding:40px 0 24px}
 .badge{display:inline-flex;align-items:center;gap:6px;background:var(--brand-soft);color:var(--brand);font-weight:700;font-size:12.5px;padding:5px 11px;border-radius:999px;letter-spacing:.02em}
 h1{font-size:clamp(28px,5vw,42px);line-height:1.15;letter-spacing:-.03em;margin:14px 0 10px;font-weight:800}
 .lead{color:var(--muted);font-size:17px;max-width:640px;margin:0}
 
-/* Layout */
 .grid{display:grid;grid-template-columns:1fr;gap:20px;padding-bottom:40px}
 @media(min-width:900px){.grid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:start}.sticky{position:sticky;top:16px}}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
@@ -92,13 +59,12 @@ h1{font-size:clamp(28px,5vw,42px);line-height:1.15;letter-spacing:-.03em;margin:
 .step{display:flex;align-items:center;gap:10px;margin:0 0 16px;font-size:17px;font-weight:700;letter-spacing:-.01em}
 .step span{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--surface);display:grid;place-items:center;font-size:13px;flex:none}
 
-/* Form */
 label.lbl{display:block;font-size:13.5px;font-weight:600;margin:0 0 6px}
 .hint{font-size:12.5px;color:var(--muted);margin-top:5px}
 .field{margin-bottom:16px}
 .money{position:relative}
 .money::before{content:"Rp";position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:600;font-size:15px}
-input[type=text],input[type=number],select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;outline:none;transition:border-color .15s,background .15s}
+input[type=text],input[type=number],select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;outline:none}
 .money input{padding-left:42px;font-weight:600}
 input:focus,select:focus{border-color:var(--brand);background:var(--surface)}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -109,7 +75,6 @@ input:focus,select:focus{border-color:var(--brand);background:var(--surface)}
 .seg button small{display:block;font-weight:500;font-size:11.5px;opacity:.85}
 .seg button[aria-pressed=true]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
 
-/* Overtime rows */
 .ot{border:1.5px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px;background:var(--bg)}
 .ot-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;font-size:13px;font-weight:700;color:var(--muted)}
 .ot-grid{display:grid;grid-template-columns:minmax(0,1fr) 110px;gap:10px}
@@ -121,13 +86,12 @@ input:focus,select:focus{border-color:var(--brand);background:var(--surface)}
 .del{border:0;background:none;color:var(--muted);cursor:pointer;font:inherit;font-size:13px;font-weight:600;padding:2px 4px}
 .del:hover{color:var(--warn)}
 .ot-warn{margin-top:8px;font-size:12.5px;color:var(--warn);background:var(--warn-soft);border-radius:8px;padding:6px 9px}
-.btn{font:inherit;font-weight:700;font-size:14.5px;border-radius:11px;padding:11px 16px;cursor:pointer;border:1.5px solid transparent;display:inline-flex;align-items:center;justify-content:center;gap:7px}
+.btn{font:inherit;font-weight:700;font-size:14.5px;border-radius:11px;padding:11px 16px;cursor:pointer;border:1.5px solid transparent;display:inline-flex;align-items:center;justify-content:center;gap:8px}
 .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink);width:100%;border-style:dashed}
 .btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
 .btn-primary{background:var(--brand);color:var(--brand-ink)}
 .btn-line{background:var(--surface);border-color:var(--line);color:var(--ink)}
 
-/* Result */
 .result{background:var(--ink);color:var(--surface);border-color:var(--ink)}
 @media (prefers-color-scheme:dark){.result{background:#0b2a21;border-color:#1d4a3c;color:var(--ink)}}
 .result .k{font-size:13px;opacity:.75;font-weight:600}
@@ -147,7 +111,6 @@ input:focus,select:focus{border-color:var(--brand);background:var(--surface)}
 .donate{margin-top:14px;background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--radius);padding:16px;font-size:14px}
 .donate a{font-weight:700}
 
-/* Article */
 article{padding:8px 0 40px}
 article h2{font-size:clamp(22px,3.5vw,28px);letter-spacing:-.02em;margin:36px 0 10px;line-height:1.25}
 article h3{font-size:18px;margin:24px 0 8px}
@@ -171,7 +134,7 @@ details p{margin:10px 0 0}
 
 footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:13.5px}
 
-.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;transition:.25s;pointer-events:none;z-index:9}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;transition:opacity .15s,transform .15s}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
 @media print{
@@ -190,7 +153,10 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="../"><span class="logo-mark">Rp</span>Kalkulator HR</a>
+    <a class="logo" href="../" aria-label="Kalkulator HR, beranda">
+      <img class="logo-mark" src="../assets/logo-kalkulator-hr.svg" alt="Kalkulator HR logo">
+      <span>Kalkulator HR</span>
+    </a>
     <nav class="top"><a href="../">Semua Tools</a><a href="#cara-hitung">Cara Hitung</a><a href="#faq">FAQ</a></nav>
   </div>
 </header>
@@ -204,7 +170,6 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
 
   <div class="grid">
     <div>
-      <!-- STEP 1 -->
       <section class="card">
         <h2 class="step"><span>1</span>Data upah</h2>
 
@@ -243,7 +208,6 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
         </div>
       </section>
 
-      <!-- STEP 2 -->
       <section class="card">
         <h2 class="step"><span>2</span>Sistem kerja</h2>
         <div class="seg" id="segSistem">
@@ -252,7 +216,6 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
         </div>
       </section>
 
-      <!-- STEP 3 -->
       <section class="card">
         <h2 class="step"><span>3</span>Daftar lembur</h2>
         <div id="rows"></div>
@@ -260,7 +223,6 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
       </section>
     </div>
 
-    <!-- RESULT -->
     <aside class="sticky">
       <section class="card result" id="result" aria-live="polite">
         <div class="k">Total upah lembur</div>
@@ -276,19 +238,15 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
           <button type="button" class="btn btn-primary" id="btnCopy">Salin hasil</button>
         </div>
       </section>
-      <!-- Kotak donasi disembunyikan: hapus atribut "hidden" setelah link Saweria/Trakteer siap -->
-  <div class="donate" hidden>
-        ☕ Kalkulator ini bermanfaat? Dukung pengembangannya lewat <!-- GANTI link di bawah dengan link Saweria/Trakteer kamu --><a href="#" target="_blank" rel="noopener">traktir kopi</a> agar tetap gratis dan terus diperbarui.
+      <div class="donate" hidden>
+        ☕ Kalkulator ini bermanfaat? Dukung pengembangannya lewat <a href="#" target="_blank" rel="noopener">traktir kopi</a> agar semua tools tetap gratis.
       </div>
-      <!-- ===== SLOT IKLAN SAMPING (AdSense) ===== -->
     </aside>
   </div>
 
-  <!-- ===== SLOT IKLAN TENGAH (AdSense) ===== -->
-
   <article class="prose">
     <h2 id="cara-hitung">Cara menghitung upah lembur</h2>
-    <p>Perhitungan upah lembur di Indonesia diatur dalam <strong>Pasal 31–33 Peraturan Pemerintah Nomor 35 Tahun 2021</strong>. Dasarnya adalah upah sebulan yang diubah menjadi upah per jam, lalu dikalikan dengan pengali sesuai jam lembur dan jenis harinya.</p>
+    <p>Perhitungan upah lembur di Indonesia diatur dalam <strong>Pasal 31–33 Peraturan Pemerintah Nomor 35 Tahun 2021</strong>. Dasarnya adalah upah sebulan yang diubah menjadi upah per jam, lalu dikalikan jam lembur dan pengali sesuai hari lembur.</p>
     <div class="formula">Upah sejam = 1/173 × upah sebulan<br>Upah lembur = Σ (jam lembur × pengali × upah sejam)</div>
 
     <h3>1. Lembur di hari kerja biasa</h3>
@@ -321,17 +279,17 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
     </ul>
 
     <h3>Dasar upah yang dipakai</h3>
-    <p>Jika upah terdiri dari gaji pokok dan tunjangan tetap, dasar perhitungannya adalah 100% dari jumlah keduanya. Jika ada juga tunjangan tidak tetap, dan gaji pokok ditambah tunjangan tetap kurang dari 75% total upah, maka dasar perhitungannya menjadi <strong>75% dari total upah</strong>. Kalkulator di atas menerapkan aturan ini secara otomatis.</p>
+    <p>Jika upah terdiri dari gaji pokok dan tunjangan tetap, dasar perhitungannya adalah 100% dari jumlah keduanya. Jika ada juga tunjangan tidak tetap, dan gaji pokok ditambah tunjangan tetap kurang dari 75% total upah, maka dasar memakai 75% dari total upah.</p>
 
-    <div class="note"><strong>Catatan regulasi 2026:</strong> DPR mengesahkan UU Pelindungan Ketenagakerjaan pada 6 Oktober 2026 dengan masa transisi satu tahun. Selama aturan pelaksana yang baru belum terbit, perhitungan lembur masih mengacu pada PP 35/2021. Kalkulator ini akan diperbarui jika ada perubahan rumus.</div>
+    <div class="note"><strong>Catatan regulasi 2026:</strong> DPR mengesahkan UU Pelindungan Ketenagakerjaan pada 6 Oktober 2026 dengan masa transisi satu tahun. Selama aturan pelaksana yang baru belum ditetapkan, perhitungan ini mengikuti PP 35/2021 yang masih berlaku.</div>
 
     <h2 id="faq">Pertanyaan yang sering diajukan</h2>
-    <details><summary>Berapa batas maksimal jam lembur?</summary><p>Paling lama 4 jam dalam 1 hari dan 18 jam dalam 1 minggu (Pasal 26 PP 35/2021). Batas ini tidak termasuk kerja lembur di hari istirahat mingguan atau hari libur resmi.</p></details>
-    <details><summary>Siapa yang tidak berhak atas upah lembur?</summary><p>Pekerja dalam golongan jabatan tertentu, yaitu yang berperan sebagai pemikir, perencana, pelaksana, dan/atau pengendali jalannya perusahaan dengan waktu kerja yang tidak dapat dibatasi, sepanjang mendapat upah yang lebih tinggi (Pasal 27 PP 35/2021).</p></details>
-    <details><summary>Apakah lembur harus disetujui pekerja?</summary><p>Ya. Kerja lembur harus berdasarkan perintah pengusaha dan persetujuan pekerja secara tertulis dan/atau melalui media digital (Pasal 28 PP 35/2021).</p></details>
-    <details><summary>Bagaimana jika upah dibayar harian?</summary><p>Upah sebulan dihitung dengan mengalikan upah harian dengan 25 untuk sistem 6 hari kerja, atau dengan 21 untuk sistem 5 hari kerja. Setelah itu, rumus 1/173 berlaku seperti biasa.</p></details>
-    <details><summary>Apakah hasil kalkulator ini mengikat secara hukum?</summary><p>Tidak. Hasilnya adalah simulasi berdasarkan PP 35/2021. Perjanjian kerja, peraturan perusahaan, atau PKB yang lebih menguntungkan pekerja tetap berlaku. Untuk sengketa, hubungi Dinas Ketenagakerjaan setempat.</p></details>
-    <a class="related" href="../kalkulator-pesangon/" style="margin-bottom:-14px"><span style="font-size:24px">📅</span><span><b>Kalkulator Pesangon</b><small>Hitung masa kerja & pesangon sesuai PP 35/2021 →</small></span></a>
+    <details><summary>Berapa batas maksimal jam lembur?</summary><p>Paling lama 4 jam dalam 1 hari dan 18 jam dalam 1 minggu (Pasal 26 PP 35/2021). Batas ini tidak termasuk kerja lembur di hari istirahat atau hari libur resmi.</p></details>
+    <details><summary>Siapa yang tidak berhak atas upah lembur?</summary><p>Pekerja dalam golongan jabatan tertentu, yaitu yang berperan sebagai pemikir, perencana, pelaksana, dan/atau pengendali, biasanya tidak termasuk dalam kategori sehari-hari yang berhak menerima upah lembur.</p></details>
+    <details><summary>Apakah lembur harus disetujui pekerja?</summary><p>Ya. Kerja lembur harus berdasarkan perintah pengusaha dan persetujuan pekerja secara tertulis dan/atau melalui media digital sesuai kebijakan perusahaan.</p></details>
+    <details><summary>Bagaimana jika upah dibayar harian?</summary><p>Upah sebulan dihitung dengan mengalikan upah harian dengan 25 untuk sistem 6 hari kerja, atau dengan 21 untuk sistem 5 hari kerja.</p></details>
+    <details><summary>Apakah hasil kalkulator ini mengikat secara hukum?</summary><p>Tidak. Hasilnya adalah simulasi berdasarkan PP 35/2021. Perjanjian kerja, peraturan perusahaan, atau PKB yang berlaku bisa menambah atau mengurangi aturan spesifik.</p></details>
+    <a class="related" href="../kalkulator-pesangon/" style="margin-bottom:-14px"><span style="font-size:24px">📅</span><span><b>Kalkulator Pesangon</b><small>Hitung masa kerja & pesangon sesuai aturan HR →</small></span></a>
     <a class="related" href="../kalkulator-pph21/" style="margin-bottom:-14px"><span style="font-size:24px">🧾</span><span><b>Kalkulator PPh 21</b><small>Hitung pajak gaji dengan tarif TER 2026 →</small></span></a>
     <a class="related" href="../kalkulator-bpjs/"><span style="font-size:24px">🛡</span><span><b>Kalkulator BPJS</b><small>Hitung potongan BPJS Kesehatan & Ketenagakerjaan 2026 →</small></span></a>
   </article>
@@ -350,7 +308,6 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
 // ===CALC-START===
 /* Logika perhitungan lembur — PP 35/2021 Pasal 31–33 */
 function getAturan(jenis, sistem){
-  // tiers: [batas atas jam, pengali]. Tier terakhir berlaku untuk jam selebihnya.
   if (jenis === 'kerja') return { tiers:[[1,1.5],[4,2]], max:4 };
   if (sistem === '5')    return { tiers:[[8,2],[9,3],[12,4]], max:12 };
   if (jenis === 'libur_pendek') return { tiers:[[5,2],[6,3],[9,4]], max:9 };
@@ -499,3 +456,127 @@ renderRows();
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aaa
